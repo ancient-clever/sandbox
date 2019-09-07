@@ -77,3 +77,9 @@ git reset --soft HEAD~
 так и рабочего каталога
 cd /home/box/REPO
 git reset --hard HEAD~
+
+18. Вам необходимо найти, какие данные были добавлены в file.txt  ﻿в третьем коммите и удалить остальные
+cd /home/box/REPO
+git log
+git diff c213be5024f2ecffe0fab8c849c838c496eeef7b...aff6e26cf3cccc67c10d5c867b8f5adae2fa3daa
+echo "oPL3g1jH9t6iUvNJi8QnWzWzajBqUgnx" > file.txt
