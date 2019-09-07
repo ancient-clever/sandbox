@@ -4,5 +4,76 @@ cp -b /home/box/condition /home/box/answer
 2. Скопируйте текст в файл
 echo  "NDQxNzU3NWRlMzYwYzFlODk3ZDU1NzlmYjQ1MjM4YTZjNjJjZTcyZDEwYTY5ODE1Yjg2MmUZTMwM2MxYTgyZCAgLQo" >> /home/box/answer
 
-3.Скопируйте содержимое файла /home/box/for_next_task из предыдущего задания в поле ниже
+3. Скопируйте содержимое файла /home/box/for_next_task из предыдущего задания в поле ниже
 cat /home/box/for_next_task
+
+4. Склонируйте репозиторий
+git clone https://github.com/OSLL/git_course_example_repo /home/box/REPO
+
+5. Настройте git так, чтобы имя git-пользователя было GitMegauser, а e-mail git_super@example.com
+cd REPO
+git config --global user.name "GitMegauser"
+git config --global user.email "git_super@example.com"
+
+6. Настройте локальную конфигурацию так, чтобы можно было выполнять команду push на сервер,
+не вводя логин и пароль github аккаунта
+cd REPO
+git remote set-url origin git@github.com:OSLL/git_course_example_repo.git
+
+7. Воспроизведите ситуацию, показанную в конце видео
+cd /home/box/REPO
+touch newfile
+echo " " >> README.md
+git add newfile
+
+8. Сделайте коммит с сообщением "Git rules!"
+cd /home/box/REPO
+touch newfile
+git add newfile
+git commit -m "Git rules!"
+
+9. На основе ветки master создайте новую ветку под названием  "git_rules"
+cd /home/box/REPO
+git checkout -b "git_rules"
+
+10. Определите полное название этой ветки с помощью git branch и запишите его в файл /home/box/answer
+cd /home/box/REPO
+git branch -a
+echo  "gYMMSPTNq38nYcDkIS-7W5mxTWn3EyaW_5555" >> /home/box/answer
+
+11. Найдите  в истории коммит с сообщением "Git rules!" и напишите его хэш (полностью) в файл /home/box/answer
+cd /home/box/REPO
+git log --pretty=format:"%H - %s"
+echo  "0b50ad9b03dd986434272649a6f452277ac83900" >> /home/box/answer
+
+12. Требуется найти коммит, сообщение которого содержит "Git rules!",  и переключиться к этому коммиту
+cd /home/box/REPO
+git log --pretty=format:"%H - %s"
+git checkout 9106ed0e84f13ad7ce246627ef9e666f11a88d76
+
+13. Необходимо при помощи команды git stash сохранить все измененные файлы в stash
+cd /home/box/REPO
+git stash
+
+14. Необходимо при помощи команды git stash извлечь сохраненные изменения в stash
+cd /home/box/REPO
+git stash pop
+
+15.Необходимо при помощи команды git stash удалить все сохраненные изменения из stash
+cd /home/box/REPO
+git stash drop
+
+16. Необходимо при помощи команды git reset откатиться к предыдущему коммиту с восстановлением индекса,
+но без изменений рабочего каталога.
+cd /home/box/REPO
+git reset --soft HEAD~
+
+16. Необходимо при помощи команды git reset откатиться к предыдущему коммиту без изменений в индексе или
+рабочем каталоге.
+cd /home/box/REPO
+git reset --soft HEAD~
+
+17. Необходимо при помощи команды git reset откатиться к предыдущему коммиту с восстановлением как индекса,
+так и рабочего каталога
+cd /home/box/REPO
+git reset --hard HEAD~
