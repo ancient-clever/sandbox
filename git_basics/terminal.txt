@@ -1,0 +1,8 @@
+1. Скопируйте содержимое файла
+cp -b /home/box/condition /home/box/answer
+
+2. Скопируйте текст в файл
+echo  "NDQxNzU3NWRlMzYwYzFlODk3ZDU1NzlmYjQ1MjM4YTZjNjJjZTcyZDEwYTY5ODE1Yjg2MmUZTMwM2MxYTgyZCAgLQo" >> /home/box/answer
+
+3.Скопируйте содержимое файла /home/box/for_next_task из предыдущего задания в поле ниже
+cat /home/box/for_next_task
