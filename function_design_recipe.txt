@@ -1,0 +1,18 @@
+The Six Steps
+
+    Examples
+        What should your function do?
+        Type a couple of example calls.
+        Pick a name (often a verb or verb phrase): What is a short answer to "What does your function do"?
+    Type Contract
+        What are the parameter types?
+        What type of value is returned?
+    Header
+        Pick meaningful parameter names.
+    Description
+        Mention every parameter in your description.
+        Describe the return value.
+    Body
+        Write the body of your function.
+    Test
+        Run the examples.
