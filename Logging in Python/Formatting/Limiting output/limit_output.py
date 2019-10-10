@@ -20,7 +20,7 @@ if __name__ == '__main__':
     big_list = [1] * 2000
 
     # Log the full list
-    logging.debug('something happened with the list=%s', big_list)
+    logging.debug('something happened with the list=%s', truncate(big_list, 30))
 
     # Truncate result (with ellipses)
-    logging.debug('something happened with the list=%s', big_list)
+    logging.debug('something happened with the list=%s', truncate(big_list, 30))
