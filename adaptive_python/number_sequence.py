@@ -5,13 +5,14 @@ def num_seq(num):
     num_seq(7)
     >>> '1 2 2 3 3 3 4'
     """
-    result = []
-    for r in range(1, num + 1):
-        while len(result) < num and result.count(r) < r:
-            result.append(r)
 
-    return result
+    n = 0
+    for i in range(1, num + 1):
+        for r in range(i):
+            if n < num:
+                print(i, end=' ')
+                n += 1
 
 
 n = int(input())
-print(*num_seq(n), sep=' ')
+num_seq(n)
