@@ -1,8 +1,17 @@
-n = int(input())
-l = []
+def num_seq(num):
+    """(int) -> str
+    Return sequence of numbers separated by space
 
-for r in range(1, n+1):
-    while l.count(r) != r and len(l) != n:
-        l.append(r)
-for i in l:
-    print(i, end=' ')
+    num_seq(7)
+    >>> '1 2 2 3 3 3 4'
+    """
+    result = []
+    for r in range(1, num + 1):
+        while len(result) < num and result.count(r) < r:
+            result.append(r)
+
+    return result
+
+
+n = int(input())
+print(*num_seq(n), sep=' ')
