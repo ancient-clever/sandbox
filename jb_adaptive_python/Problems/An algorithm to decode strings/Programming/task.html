@@ -1,0 +1,28 @@
+<html>
+ <head></head>
+ <body>
+  <p>Run-length encoding is the basic algorithm of data compression.</p> 
+  <p>In this problem, we will implement an algorithm to decode strings, encoded with one of its simplest versions.</p> 
+  <p>On the input, the algorithm has a string containing the characters of the Latin alphabet. This string is split into the so-called "series", which are encoded by a number-symbol pair or just a symbol (in this case, the number is considered equal to one). The result must contain the series in the same order, in which they occur in the original string, and each series is disclosed into the sequence of characters of a corresponding length. </p> 
+  <p>For example, let’s take the string</p>
+  <pre><code class="language-no-highlight">3ab4c2CaB</code></pre>
+  <div>
+   <br>
+  </div> Split it down into series 
+  <br>
+  <div>
+   <br>
+   <pre><code class="language-no-highlight">3a b 4c 2C a B</code></pre>
+   <div>
+    <br>
+   </div> Then transform the series and obtain the original encoded string: 
+   <br>
+  </div>
+  <div>
+   <br>
+   <pre><code class="language-no-highlight">aaabccccCCaB</code></pre>
+   <p><b>Input format:</b><br> Single string, containing the encoded sequence.</p> 
+   <p><b>Output format:</b><br> A string, containing the decoded sequence.</p>
+  </div>
+ </body>
+</html><br><b>Sample Input:</b><br>3ab4c2CaB<br><b>Sample Output:</b><br>aaabccccCCaB<br><br><br><font color="gray">Memory limit: 256 Mb</font><br><font color="gray">Time limit: 5s</font><br><br>

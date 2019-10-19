@@ -1,0 +1,9 @@
+<html>
+ <head></head>
+ <body>
+  <p>In one military unit, it was decided to stand in a single line according to height. As the discipline was not the best feature of this unit, some soldiers were late, and some had to be excluded from the activity due to their dirty boots. Nevertheless, when soldiers left and arrived they had to stand according to their height - the tallest in the beginning, and the shortest - in the end. The chief warrant officer was responsible for the procedure and he noticed an interesting feature – all soldiers in this military units had the different height. Your task is to help him correctly arrange the soldiers, namely: for every arriving soldier you need to specify in front of which soldier he has to stand. You need to find it within <span class="math-tex">\( O(\log n) \)</span> time.</p> 
+  <p><b>Input data format.</b><b></b></p> 
+  <p>The first line contains number N – the number of commands (1 ≤ N ≤ 30 000). Each of the next lines contains the description of the command: the number 1 and X if the soldier stands into the line (X – the height of the soldiers, a natural number up to 100 000 inclusive) or the number 2 and Y if the soldier, standing on the Y place in the line, needs to be removed from this single line. Soldiers in the line are numbered from zero.</p> 
+  <p><b>Output data format.</b></p> For each command 1 (add to the line) you need to output the number K – the position, where this soldier has to stand (all soldiers standing behind him, have to move back).
+ </body>
+</html><br><b>Sample Input:</b><br>5<br>1 100<br>1 200<br>1 50<br>2 1<br>1 150<br><b>Sample Output:</b><br>0 0 2 1<br><br><br><font color="gray">Memory limit: 256 Mb</font><br><font color="gray">Time limit: 1s</font><br><br>

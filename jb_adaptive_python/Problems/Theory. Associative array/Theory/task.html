@@ -1,0 +1,91 @@
+<html>
+ <head></head>
+ <body>
+  <div>
+   A 
+   <b>dictionary</b> is like a list, but more general. In a list, the indices have to be integers; in a dictionary they can be (almost) any type.&nbsp;
+  </div>
+  <div>
+   <br>
+  </div>
+  <div>
+   You can think of a dictionary as a mapping between a set of indices (which are called 
+   <b>keys</b>) and a set of values. Each key maps to a value. The association of a key and a value is called a key-value pair or sometimes an item.&nbsp;
+  </div>
+  <div>
+   <br>
+  </div>
+  <div>
+   ﻿As an example, we’ll build a dictionary that maps from English to Spanish words, so the keys and the values are all strings.
+  </div>
+  <div>
+   <br>
+  </div>
+  <div>
+   ﻿&nbsp;The function 
+   <span class="math-tex">\( dict \)</span> creates a new dictionary with no items. Because 
+   <span class="math-tex">\( dict﻿ \)</span>﻿&nbsp;is the name of a built-in function, you should avoid using it as a variable name.&nbsp;
+  </div>
+  <div></div>
+  <pre><code class="language-python">&gt;&gt;&gt;&nbsp;eng2sp&nbsp;=&nbsp;dict()
+&gt;&gt;&gt;&nbsp;print(eng2sp)
+{}</code></pre>
+  <div>
+   <br>
+  </div>
+  <div>
+   ﻿The squiggly-brackets,
+   <span>{}</span>, represent an empty dictionary. To add items to the dictionary, you can use square brackets:&nbsp;
+  </div>
+  <div>
+   <pre><code class="language-python">&gt;&gt;&gt;&nbsp;eng2sp['one']&nbsp;=&nbsp;'uno'</code></pre>&nbsp;
+  </div>
+  <div>
+   ﻿This line creates an item that maps from the key&nbsp;
+   <span class="math-tex">\( 'one' \)</span>&nbsp;to the value ﻿
+   <span class="math-tex">\( 'uno' \)</span>. If we print the dictionary again, we see a key-value pair with a colon between the key and value:&nbsp;
+  </div>
+  <div></div>
+  <pre><code class="language-python">&gt;&gt;&gt; ﻿print(eng2sp)﻿
+{'one': 'uno'}</code></pre>
+  <div></div>
+  <div>
+   <span><br></span>
+  </div>
+  <div>
+   <span>﻿In general, the order of items in a dictionary is unpredictable.&nbsp;But that’s not a problem because the elements of a dictionary are never indexed with integer indices. Instead, you use the keys to look up the corresponding values:﻿</span>
+  </div>
+  <div>
+   <span></span>
+  </div>
+  <pre><code class="language-python">&gt;&gt;&gt;&nbsp;print(eng2sp['one'])
+'uno'</code></pre>
+  <div>
+   <span>﻿</span>
+  </div>
+  <div>
+   <span>﻿If the key isn’t in the dictionary, you get an exception:&nbsp;</span>
+  </div>
+  <div>
+   <span></span>
+  </div>
+  <pre><code class="language-python">&gt;&gt;&gt;&nbsp;print(eng2sp['two'])
+KeyError :&nbsp;'two'</code></pre>
+  <div style="text-align: right;">
+   &nbsp;[Think Python by Allen B. Downey] ﻿
+   <br>
+  </div>
+  <div style="text-align: right;">
+   ﻿
+   <br>
+  </div>
+  <div>
+   See&nbsp;more&nbsp;here:
+  </div>
+  <a href="https://en.wikibooks.org/wiki/Python_Programming/Dictionaries" rel="nofollow noopener noreferrer">https://en.wikibooks.org/wiki/Python_Programming/Dictionaries</a>
+  <div>
+   <a href="https://docs.python.org/3.3/library/stdtypes.html#dict" rel="nofollow noopener noreferrer">https://docs.python.org/3.3/library/stdtypes.html#dict</a>
+   <br>
+  </div>
+ </body>
+</html>

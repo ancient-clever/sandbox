@@ -1,0 +1,11 @@
+<html>
+ <head></head>
+ <body>
+  <p>The Caesar cipher is to replace each character of the input string to the symbol, located several positions to the left or right of it in the alphabet.</p> 
+  <p>The shift is the same for all symbols. The shift the cyclical, i.e. if the single right shift is applied to the last alphabet character, it will be replaced by the first character (and vice versa for the single left shift).</p> 
+  <p>Write a program, which encodes the text by the Caesar cipher.</p> 
+  <p>The alphabet contains space and all lowercase letters of the Latin alphabet: <code>'abcdefghijklmnopqrstuvwxyz'</code></p> 
+  <p><b>Input format:</b><br> The first line contains the encryption cypher: a positive number corresponds to the shift to the right, negative – to the left. The second line contains the non-empty encryption phrase. Leading and ending spaces should not be considered.</p> 
+  <p><b>Output format:</b><br> Single line with a phrase: <code>Result: "..."</code>&nbsp;, where the encrypted sequence is written inside the quotation marks instead of three dots.</p>
+ </body>
+</html><br><b>Sample Input:</b><br>3<br>i am caesar<br><b>Sample Output:</b><br>Result: "lcdpcfdhvdu"<br><br><b>Sample Input:</b><br>-2<br>az<br><b>Sample Output:</b><br>Result: "zx"<br><br><b>Sample Input:</b><br>27<br>abc<br><b>Sample Output:</b><br>Result: "abc"<br><br><br><font color="gray">Memory limit: 256 Mb</font><br><font color="gray">Time limit: 5s</font><br><br>

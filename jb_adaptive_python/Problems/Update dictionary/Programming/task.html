@@ -1,0 +1,16 @@
+<html>
+ <head></head>
+ <body>
+  <p>Write the function <b>update_dictionary(d, key, value)</b>, which takes the dictionary <span class="math-tex">\( d \)</span> and the two numbers <span class="math-tex">\( key \)</span> and <span class="math-tex">\( value \)</span>.</p> 
+  <p>If the key <span class="math-tex">\( key \)</span> is present in the dictionary <span class="math-tex">\( d \)</span>, then append the value <span class="math-tex">\( value \)</span> to the list, which is stored by this key. <br> If the key <span class="math-tex">\( key \)</span> is not present in the dictionary, you need to append the value to the list keyed <span class="math-tex">\( 2⋅key \)</span>. Is there is no key <span class="math-tex">\( 2\cdot key \)</span>, you need to add the key <span class="math-tex">\( 2\cdot key \)</span> to the dictionary and store the list <span class="math-tex">\( [value] \)</span> by it.</p> 
+  <p>You need to implement only this function, there should be no code except of it.<br> The function should not call the input and print functions.</p> 
+  <p>An example of how function works:</p>
+  <pre><code class="language-python">d = {}
+print(update_dictionary(d, 1, -1)) &nbsp;# None
+print(d)&nbsp;                           # {2: [-1]}
+update_dictionary(d, 2, -2)
+print(d)                            # {2: [-1, -2]}
+update_dictionary(d, 1, -3)
+print(d)                            # {2: [-1, -2, -3]}</code></pre>
+ </body>
+</html><br><br><font color="gray">Memory limit: 256 Mb</font><br><font color="gray">Time limit: 5s</font><br><br>

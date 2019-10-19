@@ -1,0 +1,90 @@
+<html>
+ <head></head>
+ <body>
+  <div>
+   <b>Conditional statements </b>give us ability to check conditions and change the behavior of the program accordingly. The simplest form is the 
+   <span class="math-tex">\( if \)</span> statement:&nbsp;
+  </div>
+  <div></div>
+  <pre><code class="language-python">if&nbsp;x&nbsp;&gt; 0 :
+    print('x is positive')</code></pre>
+  <div>
+   <br>
+  </div>
+  <div>
+   &nbsp;The boolean expression after 
+   <span class="math-tex">\( if \)</span>&nbsp;is called the condition. If it is true, then the indented statement gets executed. If not, nothing happens.&nbsp;
+  </div>
+  <div>
+   <br>
+  </div>
+  <div>
+   <span class="math-tex">\( if \)</span>&nbsp;statements have the same structure as function definitions: a header followed by an indented body. Statements like this are called compound statements.&nbsp;
+  </div>
+  <div>
+   <br>
+  </div>
+  <div>
+   A second form of the 
+   <span class="math-tex">\( if \)</span>&nbsp;statement is 
+   <b>alternative execution</b>, in which there are two possibilities and the condition determines which one gets executed. The syntax looks like this:&nbsp;
+  </div>
+  <div></div>
+  <pre><code class="language-python">if&nbsp;x % 2&nbsp;==&nbsp;0:
+    print('x is even')
+else:
+    print('x is odd')</code></pre>
+  <div></div>
+  <div>
+   <br>
+  </div>
+  <div>
+   &nbsp;If the remainder when 
+   <span class="math-tex">\( x \)</span> is divided by 2 is 0, then we know that 
+   <span class="math-tex">\( x \)</span> is even, and the program displays a message to that effect. If the condition is false, the second set of statements is executed. Since the condition must be true or false, exactly one of the alternatives will be executed. The alternatives are called 
+   <b>branches</b>, because they are branches in the flow of execution.&nbsp;
+  </div>
+  <div>
+   <br>
+  </div>
+  <div>
+   Sometimes there are more than two possibilities and we need more than two branches. One way to express a computation like that is a 
+   <b>chained</b> conditional:
+  </div>
+  <div></div>
+  <pre><code class="language-python">if&nbsp;x&nbsp;&lt;&nbsp;y :
+    print&nbsp;('x is less than y')
+elif x &gt; y
+    print ('x is greater&nbsp;than y')
+else:
+    print ('x and y are equal')</code></pre>
+  <div></div>
+  <div>
+   <br>
+  </div>
+  <div>
+   <span class="math-tex">\( elif \)</span> is an abbreviation of “else if.” Again, exactly one branch will be executed. There is no limit on the number of ﻿
+   <span class="math-tex">\( elif \)</span>&nbsp;﻿statements. If there is an ﻿
+   <span class="math-tex">\( else \)</span>&nbsp;﻿clause, it has to be at the end, but there doesn’t have to be one.&nbsp;
+   <br>
+  </div>
+  <div style="text-align: right;">
+   &nbsp;[Think Python by Allen B. Downey] 
+   <br>
+  </div>
+  <div style="text-align: right;">
+   <br>
+  </div>
+  <div>
+   See&nbsp;more&nbsp;here:
+  </div>
+  <a href="https://en.wikibooks.org/wiki/Python_Programming/Conditional_Statements" rel="nofollow noopener noreferrer">https://en.wikibooks.org/wiki/Python_Programming/Conditional_Statements</a>
+  <div>
+   <a href="https://docs.python.org/3.3/reference/compound_stmts.html#the-if-statement" rel="nofollow noopener noreferrer">https://docs.python.org/3.3/reference/compound_stmts.html#the-if-statement</a>
+   <br>
+   <div>
+    <br>
+   </div>
+  </div>
+ </body>
+</html>

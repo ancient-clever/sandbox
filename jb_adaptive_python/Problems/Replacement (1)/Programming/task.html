@@ -1,0 +1,12 @@
+<html>
+ <head></head>
+ <body>
+  <p><b>Replacement</b></p> 
+  <p>Take al look on the <b>re.sub</b> function – it replaces an occurrence of the pattern to another substring.</p>
+  <pre><pre><pre><code class="language-python">pattern = "\d+"
+string = "We had 16 apples and 10 oranges"
+result = re.sub(pattern, "0", string)
+print(result)  # who stole my apples? re.sub</code></pre></pre></pre> 
+  <p><br>Simple training. A text is given as input. Your task is to keep only words separated by a space (you need to get rid of all the other characters, whether they are line breaks, commas or periods).</p>
+ </body>
+</html><br><b>Sample Input:</b><br>What are you doing here?<br><b>Sample Output:</b><br>What are you doing here <br><br><b>Sample Input:</b><br>You are not you when you are hungry<br><b>Sample Output:</b><br>You are not you when you are hungry<br><br><b>Sample Input:</b><br>PART I<br>IT WAS A PLEASURE TO BURN<br>IT was a special pleasure to see things eaten, to see things blackened and changed. With the brass nozzle in his fists, with this great python spitting its venomous kerosene upon the world, the blood pounded in his head, and his hands were the hands of some amazing conductor playing all the symphonies of blazing and burning to bring down the tatters and charcoal ruins of history. With his symbolic helmet numbered 451 on his stolid head, and his eyes all orange fl<br><b>Sample Output:</b><br>PART I IT WAS A PLEASURE TO BURN IT was a special pleasure to see things eaten to see things blackened and changed With the brass nozzle in his fists with this great python spitting its venomous kerosene upon the world the blood pounded in his head and his hands were the hands of some amazing conductor playing all the symphonies of blazing and burning to bring down the tatters and charcoal ruins of history With his symbolic helmet numbered 451 on his stolid head and his eyes all orange fl<br><br><br><font color="gray">Memory limit: 256 Mb</font><br><font color="gray">Time limit: 5s</font><br><br>

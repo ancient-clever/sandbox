@@ -1,0 +1,51 @@
+<html>
+ <head></head>
+ <body>
+  <p>Class <b>filter</b> is one of the most frequently used classes in Python. In the constructor it takes the two arguments <b>a </b>and <b>f </b>–<b>&nbsp;</b>a sequence and a function, and allows to iterate only by such<b> </b>elements <b>x </b>from the sequence <b>a</b> that <b>f(x)</b>&nbsp;equals to <b>True</b>. Let’s say that in this case the function <b>f</b>&nbsp;accepts the element <b>x</b>, and the element <b>x </b>is an accepted&nbsp;one.</p> 
+  <p>In this problem, we ask you to implement the <b>multifilter</b> class, which will do the same as the standard <b>filter</b> class, but will use several functions instead of a single one. </p> 
+  <p>The decision to accept an element will be taken based on how many functions accept &nbsp;this element, and how many don't. Let us mark these quantities as <b>pos</b>&nbsp;and <b>neg</b>.</p> 
+  <p>Let us introduce the notion of the <i>decision function<b>&nbsp;</b></i>– this is the function, which takes the two arguments – numbers <b>pos </b>and <b>neg</b>,<b>&nbsp;</b>and returns <b>True</b>, if the element is allowed, and <b>False</b>&nbsp;otherwise.</p> 
+  <p>Let’s consider the acceptance process in more details in the following example:<br> <b>a = [1, 2, 3]</b><br> <b>f2(x) = x % 2 == 0 </b># returns <b>True</b>, if <b>x</b>&nbsp;is divisible by 2<br> <b>f3(x) = x % 3 == 0</b><br> <b>judge_any(pos, neg) = pos &gt;= 1 </b># returns <b>True</b>, if at least one function accepts an element</p> 
+  <p>In this example, we want to filter the sequence <b>a</b> and keep only those elements, which are divided by two or three.</p> 
+  <p>The <b>f2 </b>function accepts only for the elements, which can be divided by two, and the <b>f3</b>&nbsp;function accepts only for the elements, divided by three. The decision function accepts the element only in the case it was accepted by at least one of the functions <b>f2</b>&nbsp;or <b>f3</b>, i.e. the elements, which can be divided either by two, or by three.</p> 
+  <p>Let’s take the first element <b>x = 1</b>.<br> <b>f2(x) </b>is <b>False,</b>&nbsp;i.e. the function <b>f2</b>&nbsp;does not accept the element <b>x</b>.<br> <b>f3(x)</b>&nbsp;is also <b>False</b>, i.e. the function <b>f3</b>&nbsp;also does not accept the element <b>x</b>.<br> In this case <b>pos = 0</b>, as non of the functions accepts <b>x</b>, and, accordingly, <b>neg = 2.</b><br> <b>judge_any(0, 2) </b>is <b>False</b>, it means that we don't accept the element <b>x = 1</b>.</p> 
+  <p>Let’s take the second element <b>x = 2</b>.<br> <b>f2(x) </b>is <b>True</b><br> <b>f3(x)</b>&nbsp;is <b>False</b><br> <b>pos = 1</b>, <b>neg = 1</b><br> <b>judge_any(1, 1) </b>is <b>True, </b>and it means that we accept the element <b>x = 2.</b></p> 
+  <p>Similar for the third element <b>x = 3</b>.</p> 
+  <p>Thus, we got the sequence of the accepted elements <b>[2, 3]</b>.</p> 
+  <p>The class should have the following structure:</p>
+  <pre></pre>
+  <pre><code>class multifilter:
+    def judge_half(pos, neg):
+        # accepts the element, if at least half of the functions accept this 
+          element (pos &gt;= neg)
+    def judge_any(pos, neg):
+        # accepts the element, if at least one of the functions accept it (pos &gt;= 1)
+    def judge_all(pos, neg):
+        # accepts the element, if at all functions accept it (neg == 0)
+    def __init__(self, iterable, *funcs, judge=judge_any):
+        # iterable - the original sequence
+        # funcs - the allowing functions
+        # judge - the judging function
+    def __iter__(self):
+        # returns iterator on the resulting sequence</code></pre>
+  <p><b> </b></p>
+  <p><b><b>Use example:</b></b></p>
+  <pre><pre><code>def mul2(x):
+    return x % 2 == 0
+def mul3(x):
+    return x % 3 == 0
+def mul5(x):
+    return x % 5 == 0
+a = [i for i in range(31)] # [0, 1, 2, ... , 30]
+print(list(multifilter(a, mul2, mul3, mul5))) 
+# [0, 2, 3, 4, 5, 6, 8, 9, 10, 12, 14, 15, 16, 18, 20, 21, 22, 24, 25, 26, 27, 28, 30]
+print(list(multifilter(a, mul2, mul3, mul5, judge=multifilter.judge_half))) 
+# [0, 6, 10, 12, 15, 18, 20, 24, 30]
+print(list(multifilter(a, mul2, mul3, mul5, judge=multifilter.judge_all))) 
+# [0, 30]</code></pre></pre>
+  <div>
+   <br>
+   <b></b>
+  </div>
+ </body>
+</html><br><br><font color="gray">Memory limit: 256 Mb</font><br><font color="gray">Time limit: 5s</font><br><br>

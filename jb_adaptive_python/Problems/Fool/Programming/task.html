@@ -1,0 +1,20 @@
+<html>
+ <head></head>
+ <body>
+  <p>The card deck to play Fool contains 36 cards. Each of the cards has a </p> 
+  <ul> 
+   <li><b>suit</b>: clubs, diamonds, hearts and spades (marked as C, D, H, S);</li> 
+   <li><b>face value</b>: values from 6 to 10, jack, queen, king, ace (marked as 6, 7, 8, 9, 10, J, Q, K, A).</li> 
+  </ul> 
+  <p>During calculations, the card values are used as described above: 6 has the lowest value, and ace - the highest.</p> 
+  <p>Write a program, which decides whether one cards beats another one.<br> </p> 
+  <p>If there are two cards of the same suit, wins the one having the higher face value;<br> If the cards belong to the different suits, wins the one having the trump suit;<br> If the cards belong to the different suits and there are no cards from the trump suit, nobody wins.</p> 
+  <p><b>Input format:</b><br> First line specifies the two cards in the <b>&lt;value&gt;&lt;suit&gt;</b> format separated by a space, and the next line specifies the trump suit.</p> 
+  <p><b>Output format:</b><br> The program should output a single word:<br></p>
+  <ul>
+   <li><b>First</b><span>, if the first card beats the second one,&nbsp;</span><br></li>
+   <li><b>Second</b><span>, if the second card beats the first one,</span><br></li>
+   <li><b>Error</b><span>, if none of the cards can beat the other one.</span><br></li>
+  </ul> 
+ </body>
+</html><br><b>Sample Input:</b><br>AH JH<br>D<br><b>Sample Output:</b><br>First<br><br><b>Sample Input:</b><br>AH JS<br>S<br><b>Sample Output:</b><br>Second<br><br><b>Sample Input:</b><br>7C 10H<br>S<br><b>Sample Output:</b><br>Error<br><br><br><font color="gray">Memory limit: 256 Mb</font><br><font color="gray">Time limit: 5s</font><br><br>

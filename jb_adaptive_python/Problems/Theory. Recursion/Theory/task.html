@@ -1,0 +1,51 @@
+<html>
+ <head></head>
+ <body>
+  <p>It is legal for one function to call another; it is also legal for a function to call itself. It may not be obvious why that is a good thing, but it turns out to be one of the most magical things a program can do. For example, look at the following function:&nbsp;<br></p>
+  <pre><code class="language-python">def&nbsp;countdown(n):
+  if n&lt;= 0:  
+      print ('Blastoff!')
+  else :
+      print&nbsp;(n)
+      countdown(n-1)</code></pre>
+  <p>If <span class="math-tex">\( n \)</span> is 0 or negative, it outputs the word, “Blastoff!” Otherwise, it outputs <span class="math-tex">\( n \)</span> and then calls a function named <span class="math-tex">\( countdown \)</span>—itself—passing <span class="math-tex">\( n-1 \)</span> as an argument. What happens if we call this function like this?&nbsp;<br></p>
+  <pre><code class="language-python">&gt;&gt;&gt; contdown(3)</code></pre>&nbsp;
+  <div>
+   The execution of 
+   <span class="math-tex">\( countdown \)</span> begins with 
+   <span class="math-tex">\( n=3 \)</span>, and since n is greater than 0, it outputs the value 3, and then calls itself...&nbsp;
+  </div>
+  <div>
+     The execution of 
+   <span class="math-tex">\( countdown \)</span> begins with 
+   <span class="math-tex">\( n=2 \)</span>, and since n is greater than 0, it outputs the value 2, and then calls itself...&nbsp;
+   <br>    &nbsp; &nbsp;﻿The execution of 
+   <span class="math-tex">\( countdown \)</span> begins with 
+   <span class="math-tex">\( n=1 \)</span>, and since n is greater than 0, it outputs the value 1, and then calls itself...&nbsp;
+   <br>    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ﻿The execution of 
+   <span class="math-tex">\( countdown \)</span> begins with 
+   <span class="math-tex">\( n=0 \)</span>, and since n is not greater than 0, it outputs the
+   <b></b> word, “Blastoff!” and then &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ﻿returns.
+   <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ﻿The 
+   <span class="math-tex">\( countdown \)</span> that got 
+   <span class="math-tex">\( n=1 \)</span>&nbsp;returns.&nbsp;
+   <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;﻿The countdown that got 
+   <span class="math-tex">\( n=2 \)</span> returns.&nbsp;
+   <br>The countdown that got 
+   <span class="math-tex">\( n=3 \)</span> returns.&nbsp;
+   <br>
+   <br>
+  </div>
+  <div>
+   ﻿And then you’re back in __main__. So, the total output looks like this:&nbsp;
+   <br>
+   <pre><code class="language-python">3
+2
+1
+Blastoff!</code></pre>
+   <p>&nbsp;A function that calls itself is <b>recursive</b>; the process is called <b>recursion</b>.<br></p>
+   <p style="text-align: right;">[Think Python by Allen B. Downey] <br></p>
+   <p style="text-align: left;">See&nbsp;more&nbsp;here:<br><a href="https://en.wikipedia.org/wiki/Recursion_(computer_science)" rel="nofollow noopener noreferrer">https://en.wikipedia.org/wiki/Recursion_(computer_science)</a><br></p>
+  </div>
+ </body>
+</html>

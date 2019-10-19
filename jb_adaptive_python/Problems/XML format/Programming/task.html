@@ -1,0 +1,19 @@
+<html>
+ <head></head>
+ <body>
+  <p>You are given a description of a pyramid made of cubes in the XML format.<br> The cubes can be of three colors: red (<b>red</b>), green (<b>green</b>) and blue (<b>blue</b>). <br> We know the color of each cube, and the cubes, located directly under it.</p> 
+  <p><b>Example:</b></p>
+  <pre><pre><code class="language-xml">&lt;cube color="blue"&gt;
+&nbsp; &lt;cube color="red"&gt;
+&nbsp; &nbsp; &lt;cube color="green"&gt;
+&nbsp; &nbsp; &lt;/cube&gt;
+&nbsp; &lt;/cube&gt;
+&nbsp; &lt;cube color="red"&gt;
+&nbsp; &lt;/cube&gt;
+&lt;/cube&gt;</code></pre>&nbsp;</pre> 
+  <p>Let us introduce the concept of a value for the cubes. The top cube, corresponding to the root of the XML document, has a value of <b>1</b>. The cubes, located right below it, have a value of <b>2</b>. The cubes below these ones have a value of <b>3.</b>&nbsp;And so on.</p> 
+  <p>The value of a color equals to the sum of values of all cubes of this color.</p> 
+  <p>Output the three space-separated numbers: the values of red, green and blue colors.</p>
+  <div></div>
+ </body>
+</html><br><b>Sample Input:</b><br><cube color="blue"><cube color="red"><cube color="green"></cube></cube><cube color="red"></cube></cube><br><b>Sample Output:</b><br>4 3 1<br><br><br><font color="gray">Memory limit: 256 Mb</font><br><font color="gray">Time limit: 5s</font><br><br>

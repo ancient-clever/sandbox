@@ -1,0 +1,18 @@
+<html>
+ <head></head>
+ <body>
+  <p><b>Exceptions on the stack</b></p> 
+  <p>You are given a description of the current state of the program. Up to this point, we’ve made the chain of function calls and the latest called function currently handles the exception. You are given the stack of functions calls, the behaviour of the functions when handling various exceptions and the name of the currently processed exception.</p> 
+  <p>Functions can operate with an exception as follows.</p> 
+  <ul> 
+   <li>The function does not handle (does not catch) the exception. In this case, the function is removed from the call stack, and the exception is thrown further.</li> 
+   <li>The function handles the exception and throws a new exception. In this case, the function is removed from the call stack and the new exception is thrown further.</li> 
+   <li>The function handles the exception and continues to work correctly. In this case, the function remains on the stack of calls and no new exceptions are generated.</li> 
+  </ul> 
+  <p><b>Input data format</b><b></b></p> 
+  <p>The first line of input data contains number <b>n</b>&nbsp;– the size of the call stack (<b>1 </b>≤ <b>n </b>≤ <b>40</b>).<br> The second line of input data contains <b>n</b>&nbsp;lines, separated by a space – the names of the functions, located on the stack, in the order they were called.<br> The next line contains number <b>m</b>&nbsp;(<b>1 </b>≤ <b>m </b>≤ <b>100</b>).<br> The following <b>m</b>&nbsp;lines contain the description of the functions behaviour when handling exceptions.<br> A description of the behavior is as below.<br> <b>&lt;function&gt; &lt;handled exception&gt; &lt;throwed exception&gt;.</b><br> For example, <b>fun e1 e2</b>. This entry indicates that when processing the <b>e1</b>&nbsp;exception, the <b>fun</b>&nbsp;function will generate the exception <b>e2</b>.<br> The underscore symbol '<b>_</b>' may be present instead of the thrown exception name. This means that when processing the exception, the functions continues to operate properly and does not generate any new exceptions.<br> The name of the function or the exception - the string consisting of the lowercase letters of the Latin alphabet, having the length of not more than<b> 5</b>. </p> 
+  <p>The last line of the input contains the name of the currently processed exception.</p> 
+  <p><b>Output data format</b><b></b></p> 
+  <p>In the single line output the names of the functions, which will remain on the call stack after processing all the exceptions in the order, in which they were called. In the case if there are no functions left on the stack, output an empty line.</p>
+ </body>
+</html><br><b>Sample Input:</b><br>3<br>a b c<br>4<br>c ex1 ex2<br>b ex3 _<br>a ex2 _<br>c ex3 ex3<br>ex1<br><br><b>Sample Output:</b><br>a<br><br><b>Sample Input:</b><br>3<br>a b c<br>4<br>c ex1 ex2<br>b ex3 _<br>a ex2 _<br>c ex3 ex3<br>ex3<br><br><b>Sample Output:</b><br>a b<br><br><br><font color="gray">Memory limit: 256 Mb</font><br><font color="gray">Time limit: 2s</font><br><br>

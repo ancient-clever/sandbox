@@ -1,0 +1,20 @@
+<html>
+ <head></head>
+ <body>
+  <p><b>Problem</b>: read the data from the file and find their average (mean) values.</p> 
+  <p>As input, your solution will get an address, where the csv-file is located – you have to read data from that file. The first line in the file - column names, other lines - numeric data (that is, each line except the first one, contains a sequence of real numbers, separated by commas).</p> 
+  <p>Find and print the vector of average values along the columns of the input data. Thus, if the input data file looks like below:</p>
+  <pre><code class="language-python">a,b,c,d
+1.5,3,4,6
+2.5,2,7.5,4
+3.5,1,3.5,2</code></pre>
+  <p><br>the solution will be<br></p> 
+  <pre><code class="language-python">[ 2.5  2.   5.   4. ]</code></pre> 
+  <p><br>You can pass a file object as a file in <b>np.loadtxt</b>. This is convenient in the cases such as now, when the data is not on your computer, but somewhere in the network. How to download them? Using the standard libraries:</p>
+  <div>
+   <pre><code class="language-python">&gt;&gt;&gt; from urllib.request import urlopen
+&gt;&gt;&gt; f = urlopen('https://stepic.org/media/attachments/lesson/16462/boston_houses.csv')</code></pre> 
+   <p>Now f contains the file object, which you can pass to <b>np.loadtxt</b>.</p>
+  </div>
+ </body>
+</html><br><b>Sample Input:</b><br>https://stepic.org/media/attachments/lesson/16462/boston_houses.csv<br><b>Sample Output:</b><br>[22.53280632  3.61352356 11.36363636  0.06916996  0.55469506  6.28463439<br>  3.79504269]<br><br><br><font color="gray">Memory limit: 256 Mb</font><br><font color="gray">Time limit: 5s</font><br><br>

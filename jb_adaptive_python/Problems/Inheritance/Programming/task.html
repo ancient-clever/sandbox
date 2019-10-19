@@ -1,0 +1,39 @@
+<html>
+ <head></head>
+ <body>
+  <p>You are given the description of class inheritances in the following format. <br> <b>&lt;class name 1&gt; : &lt;class name 2&gt; &lt;class name 3&gt; ... &lt;class name k</b>&gt;<br> It means that <b>class 1</b>&nbsp;is inherited from <b>class 2</b>, <b>clacc 3</b>, etc.<br> <br> It is equivalent to the following class declaration in Python:</p>
+  <pre><code class="language-python">class Class1(Class2, Class3 ... ClassK):
+    pass</code></pre>
+  <p>Class <b>A</b> is an <b>immediate ancestor</b> of class <b>B</b>, if <b>B</b> is inherited from <b>A:</b></p>
+  <pre><code class="language-python">class B(A):
+    pass</code></pre>
+  <br> 
+  <p>Class <b>A</b> is an <b>ancestor</b> of class<b>&nbsp;B</b>, if one of the following:<br> </p> 
+  <ul> 
+   <li><b>A </b>=<b>&nbsp;B</b>;</li> 
+   <li><b>A</b>&nbsp;- immediate ancestor of <b>B</b></li> 
+   <li>there is such class <b>C</b> that <b>C </b>is an immediate ancestor of <b>B</b> and <b>A</b> - ancestor of <b>C</b></li>
+  </ul> For example: 
+  <br>
+  <br>
+  <div>
+   <pre><code class="language-python">class B(A):
+    pass
+class C(B):
+    pass
+# A -- ancestor of С</code></pre>
+   <br> 
+   <p>You should answer the queries whether one class is the ancestor of another class</p> 
+   <p><b>Important note:</b></p> 
+   <p>It is not required to create classes.</p> 
+   <p>We ask you just to model this process and understand where there is a path from one class to another.</p> 
+   <p><b>Input data format</b><b></b></p> 
+   <p>In the first line contains the integer<b> n</b> - the number of classes. </p> 
+   <p>The next<b> n</b> lines contain the description of the class inheritances. The <b>i-</b>th line specifies from which classes this <b>i-</b>th class is inherited. Please note that the class can be not inherited. It is guaranteed that the class is not inherited from itself (directly or indirectly), that the class is not inherited from another class for more than once.</p> 
+   <p>The next line contains number <b>q</b>&nbsp;- the amount of queries.</p> 
+   <p>The following <b>q</b>&nbsp;lines contain the description of these queries in the following format: <b>&lt;class name 1&gt; &lt;class name 2&gt;</b>.<br> <br> The class name is a string consisting of the characters of the Latin alphabet, having the length of not more than 50 characters.</p> 
+   <p><b>Output data format</b></p> 
+   <p>For each of the queries output in a separate line the word "<b>Yes</b>", if <b>class 1</b>&nbsp;is an ancestor of <b>class 2</b>, and "<b>No</b>", if it is not.</p>
+  </div>
+ </body>
+</html><br><b>Sample Input:</b><br>4<br>A<br>B : A<br>C : A<br>D : B C<br>4<br>A B<br>B D<br>C D<br>D A<br><br><b>Sample Output:</b><br>Yes<br>Yes<br>Yes<br>No<br><br><br><br><font color="gray">Memory limit: 256 Mb</font><br><font color="gray">Time limit: 2s</font><br><br>

@@ -1,0 +1,65 @@
+<html>
+ <head></head>
+ <body>
+  <p>Implement a program that will simulate the work with namespaces. It is necessary to implement the support for the creation of namespaces and adding variables into them.</p> 
+  <p>In this problem, each of the namespaces has its unique text identifier - its name.</p> 
+  <p>On input, your program is served the following requests:</p> 
+  <ul> 
+   <li><b>create &lt;namespace&gt; &lt;parent&gt; </b>– &nbsp;create the new namespace with the name <b>&lt;namespace&gt; </b>inside the space <b>&lt;parent&gt;</b></li> 
+   <li><b>add &lt;namespace&gt; &lt;var&gt; </b>– add the <b>&lt;var&gt;</b> variable to the namespace <b>&lt;namespace&gt;</b></li> 
+   <li><b>get &lt;namespace&gt; &lt;var&gt; </b>– get the name of the namespace, from which the <b>&lt;var&gt; </b>will be taken during the request from the <b>&lt;namespace&gt;</b>, or <b>None</b>, if such namespace does not exist</li> 
+  </ul> 
+  <p>Let us review the set of requests</p> 
+  <ul> 
+   <li><b>add global a</b></li> 
+   <li><b>create foo global</b></li> 
+   <li><b>add foo b</b></li> 
+   <li><b>create bar foo</b></li> 
+   <li><b>add bar a</b></li> 
+  </ul> 
+  <p>Structure of the namespaces, described by these requests, will be equivalent to the structure of the namespaces that were created when performing the following code:</p>
+  <pre><pre><code class="language-python">a = 0
+def foo():
+&nbsp; b = 1
+&nbsp; def bar():
+&nbsp; &nbsp; a = 2</code></pre></pre>
+  <p>In the main body of the program we declare the <b>a</b> variable, thus adding it to the namespace <b>global</b>. Further, we declare the <b>foo</b> function, which leads to creation of its local namespace inside the <b>global</b> namespace. In our case this is described by the command <b>create foo global</b>. Next, inside the <b>foo</b>&nbsp;function we declare the <b>bar</b> function, thus creating the <b>bar</b>&nbsp;namespace inside the <b>foo</b> namespace, and add <b>a</b> variable into <b>bar</b>.</p> 
+  <p>Let’s add the following <b>get </b>requests to our previous requests:</p> 
+  <ul> 
+   <li><b>get foo a</b></li> 
+   <li><b>get foo c</b></li> 
+   <li><b>get bar a</b></li> 
+   <li><b>get bar b</b></li> 
+  </ul> 
+  <p>Imagine how this could look like in a code:</p>
+  <pre><code class="language-python">a = 0
+def foo():
+&nbsp; b = 1
+&nbsp; get(a)
+&nbsp; get(c)
+&nbsp; def bar():
+&nbsp; &nbsp; a = 2
+&nbsp; &nbsp; get(a)
+&nbsp; &nbsp; get(b)</code></pre>&nbsp;
+  <div>
+   <span>The result of the</span>
+   <b> get </b>
+   <span>query is the name of the namespace, from which the desired variable will be taken.&nbsp;</span>
+   <div>
+    <p> For example, the result of the <b>get foo a </b>query is <b>global</b>, because in the <b>foo </b>namespace the <b>a</b> variable is not declared, but it is declared in the <b>global</b> namespace, inside which <b>foo</b> is located. Similarly, the result of <b>get bar b</b>&nbsp;request is <b>foo</b>, and the result of <b>get bar a</b>&nbsp;operation is <b>bar</b>.</p> 
+    <p>The result of <b>get foo c</b>&nbsp;will be <b>None</b>, because the <b>c</b> variable was not declared neither in the namespace <b>foo</b>, nor in its outer space <b>global</b>.</p> 
+    <p>More formally, the result of operation of <b>get &lt;namespace&gt; &lt;var&gt; is</b>:</p> 
+    <ul> 
+     <li><b>&lt;namespace&gt;</b>, if inside this <b>&lt;namespace&gt;</b>&nbsp;was declared the variable <b>&lt;var&gt;</b></li> 
+     <li><b>get &lt;parent&gt; &lt;var&gt;</b>&nbsp;– the result of query to the space, inside which the <b>&lt;namespace&gt;</b> was created, if the variable was not declared</li> 
+     <li><b>None</b>, if <b>&lt;parent&gt;</b> does not exist, i.e. if <b>&lt;namespace&gt;</b>&nbsp;is <b>global</b></li> 
+    </ul> 
+    <p><b>Input data format</b><b></b></p> 
+    <p>Given the number <b>n</b>&nbsp;(<b>1 </b>≤ <b>n </b>≤ <b>100</b>) in the first line – the number of requests.<br> Each of the following <b>n</b>&nbsp;lines contain one request each.<br> The requests are executed in the order in which they are provided in the input data.<br> The names of the namespaces and the names of the variables are strings having the length of not more than<b> 10</b>, consisting of lowercase Latin letters. </p> 
+    <p><b>Output data format</b><b></b></p> 
+    <p>For each of the <b>get</b>&nbsp;requests, output its results on a separate line.</p>
+    <p><br></p>
+   </div>
+  </div>
+ </body>
+</html><br><b>Sample Input:</b><br>9<br>add global a<br>create foo global<br>add foo b<br>get foo a<br>get foo c<br>create bar foo<br>add bar a<br>get bar a<br>get bar b<br><br><b>Sample Output:</b><br>global<br>None<br>bar<br>foo<br><br><br><br><font color="gray">Memory limit: 256 Mb</font><br><font color="gray">Time limit: 5s</font><br><br>

@@ -1,0 +1,20 @@
+<html>
+ <head></head>
+ <body>
+  <p><b>Sets of symbols</b></p> 
+  <p>In this problem, we will learn to specify sets of symbols.</p> 
+  <p>To do this we use the wildcards <b>[ ]</b>.</p> 
+  <p>Inside the brackets we can list all the characters that suit us: we can write a regular expression "<b>[abc]bc</b>", which will fit the strings <b>abc</b>, <b>bbc</b>, and <b>cbc</b>:</p>
+  <pre><code>import re
+results = re.findall("[abc]bc", "abc bbc cbc abb")
+print(results)</code></pre>
+  <p><br>Entry <b>[abc]</b> should be considered as a single symbol, which describes: either <b>a</b>, or <b>b</b>, or <b>с</b>.</p> 
+  <p>The other way to define a set of symbols is the alteration wildcard <b>|</b>.</p> 
+  <p>Let’s describe a group of symbols inside the parentheses, and use the alteration symbol: "<b>(a|b|c)bc</b>"</p>
+  <pre><code class="language-python">import re
+results = re.findall("(a|b|c)bc", "abc bbc cbc abb")
+print(results)</code></pre>
+  <p><br>Unlike a set of symbols specified by the wildcards [ ], the alteration sign can be used for non-single-symbol sequences: &nbsp;the pattern "<b>(abc|abe|dd)x</b>" this way will fit the three lines – "<b>abcx</b>", "<b>abex</b>" and "<b>ddx</b>".<br></p> 
+  <p>In this problem, you get text as input. By using regular expressions you should find all occurrences of the "<b>you</b>" or "<b>You</b>" in it and output the number of occurrences.</p>
+ </body>
+</html><br><b>Sample Input:</b><br>What are you doing here?<br><b>Sample Output:</b><br>1<br><br><b>Sample Input:</b><br>You are not you when you are hungry<br><b>Sample Output:</b><br>3<br><br><b>Sample Input:</b><br>PART I<br>IT WAS A PLEASURE TO BURN<br>IT was a special pleasure to see things eaten, to see things blackened and changed. With the brass nozzle in his fists, with this great python spitting its venomous kerosene upon the world, the blood pounded in his head, and his hands were the hands of some amazing conductor playing all the symphonies of blazing and burning to bring down the tatters and charcoal ruins of history. With his symbolic helmet numbered 451 on his stolid head, and his eyes all orange fl<br><b>Sample Output:</b><br>0<br><br><br><font color="gray">Memory limit: 256 Mb</font><br><font color="gray">Time limit: 5s</font><br><br>

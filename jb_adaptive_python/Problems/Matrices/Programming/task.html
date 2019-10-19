@@ -1,0 +1,23 @@
+<html>
+ <head></head>
+ <body>
+  <p>On the input, the program is given two matrices, each in the following format: the first line contains two positive integers <span class="math-tex">\( n \)</span> and <span class="math-tex">\( m \)</span> separated by a space - <b>matrix dimensions</b>. The next line contains <span class="math-tex">\( n⋅m \)</span> space separated integers - <b>elements of the matrix</b>. It is assumed that the matrix is filled <b>line-by-line</b>, which means the first <span class="math-tex">\( m \)</span> numbers – the first row of the matrix, the numbers from <span class="math-tex">\( m+1 \)</span> to <span class="math-tex">\( 2m \)</span> - the second row, etc.</p> 
+  <p>Print the product of matrices <span class="math-tex">\( XY^T \)</span>, if their forms match, otherwise print the line "matrix shapes do not match" (if the forms of the matrices do not match properly). </p> 
+  <p>At this time, we have done the preparatory work on reading matrices for you (when you start solving, this code will be already written):</p>
+  <pre><code class="language-python">x_shape = tuple(map(int, input().split()))
+X = np.fromiter(map(int, input().split()), np.int).reshape(x_shape)</code></pre>
+  <p> A few comments:</p>
+  <ul>
+   <li><code>map(f, utterable, …)</code> — built-in Python function, returns the result of by-element application of the function f to the elements of the <code>iterable</code><code></code>sequence; if <code>f</code> takes several arguments, there should be the same number of sequences: the result will be presented by the <code>map(f, x, y, z)</code> iterator, subsequently returning <code>f(x[0], y[0], z[0])</code>, <code>f(x[1], y[1], z[1])</code>, <code>f(x[2], y[2], z[2])</code> and so on; the result of the applying f to the next set of arguments will be calculated only when you need to use this result, but not earlier. Please read the shorted and more detailed description <a href="https://docs.python.org/3/library/functions.html#map" rel="nofollow noopener noreferrer">here</a>;</li>
+  </ul>
+  <ul>
+   <li><code>np.fromiter</code> creates the NumPy-array from the iterator - it get all values from the iterator and stores them in the array;</li>
+  </ul>
+  <ul> 
+   <li><code>input()</code> — built-in Python function; reads one line (a sequence of characters until the line break symbol) from the input data stream and returns it as a string</li>
+  </ul>
+  <ul> 
+   <li><code>split()</code> — the methods of the <code>string</code>class; returns the list of words in the string (here words are the sequences of symbols, separated by spaces); allows additional arguments; please read more <a href="https://docs.python.org/3/library/stdtypes.html#str.split" rel="nofollow noopener noreferrer">in documentation</a>.</li>
+  </ul>
+ </body>
+</html><br><b>Sample Input:</b><br>2 3<br>4 13 10 8 6 10<br>4 3<br>2 3 4 2 3 2 4 6 3 1 1 4<br><b>Sample Output:</b><br>[[ 87  67 124  57]<br> [ 74  54  98  54]]<br><br><b>Sample Input:</b><br>2 3<br>8 6 9 6 12 9<br>3 4<br>3 6 5 3 9 5 3 4 3 3 4 5<br><b>Sample Output:</b><br>matrix shapes do not match<br><br><br><font color="gray">Memory limit: 256 Mb</font><br><font color="gray">Time limit: 5s</font><br><br>

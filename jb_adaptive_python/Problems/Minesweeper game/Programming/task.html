@@ -1,0 +1,9 @@
+<html>
+ <head></head>
+ <body>
+  <p>A field for the minesweeper game is a grid <span class="math-tex">\( n \times m \)</span> in size. The cell of the grid may or may not contain a mine. </p> 
+  <p>Write a program that outputs "solved" field, i.e., for each cell, which is not a mine, it indicates the number of mines in the neighbouring cells (including diagonal directions)</p> 
+  <p><b>Input format:</b><br> The first line contains two natural numbers <span class="math-tex">\( 1 \le n,m \le 100 \)</span>, after which the <span class="math-tex">\( n \)</span> lines contain a description of the field in the form of a sequence of dots '.' and asterisks '*', where the dot denotes an empty cell, and the asterisk – the cell with a mine.</p> 
+  <p><b>Output format:</b><br> <span class="math-tex">\( n \)</span> lines of the field, each cell of which will contain either a number from 0 to 8, or a mine (marked by "*"), wherein any number means the number of mines in the neighbouring cells.</p>
+ </body>
+</html><br><b>Sample Input:</b><br>4 4<br>..*.<br>**..<br>..*.<br>....<br><b>Sample Output:</b><br>23*1<br>**32<br>23*1<br>0111<br><br><br><font color="gray">Memory limit: 256 Mb</font><br><font color="gray">Time limit: 5s</font><br><br>

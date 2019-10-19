@@ -1,0 +1,48 @@
+<html>
+ <head></head>
+ <body>
+  <p><b>A bit harder</b></p> 
+  <p>Let there be an allowed multiple assignments in a form of:</p>
+  <pre><code class="language-python">string = "14 15 16"
+a, b, c = string.split(" ")</code></pre>
+  <div>
+   <br>
+  </div>
+  <div> 
+   <p>It would be useful to highlight all variables within this assignment!</p> 
+   <p>Also a code can have some comments (!), inside which the assignment doen't happen, and it would be great to ignore assignments inside these comments.</p> 
+   <p>Let me remind that a comment starts from the # symbol and continues to the end of the line. For example:</p>
+  </div>
+  <div>
+   <pre><code>a, b, c = string.split(" ") # multiple assignment
+# a, b, c = string.split(" ") multiple assignment</code></pre>
+   <div>
+    We are interested only in the first line.
+    <br>
+   </div>
+   <div>
+    <br>
+   </div>
+   <div>
+    <p> Assignments may also be for the attributes. That is why a variable may contain dots, but may not start from the dot and may not contain two dots in a row. </p> 
+    <p>The input of this problem in a Python code; each line may contain one assignment, but with a several variables. You need to find all uncommented assignments and for each of them output the space separated number of the line (in which it occurs) and the name of each variable (in the same order as they are in the assignment).</p> 
+    <p><b>NB</b>. This problem may require using <b>re.match</b> instead of <b>re.findall</b>; the re.match function checks whether the string matches the pattern (does not find the occurrence of the pattern in the string, like <b>re.findall</b> does), the re.match function returns <b>MatchObject</b> if the string (or the beginning of the string) matches the pattern, and None otherwise. <b>MatchObject</b> has the <b>groups()</b> method, which contains the grouped symbols. An example of the use of <b>re.match</b>:</p>
+   </div>
+  </div>
+  <div>
+   <pre><code class="language-python">import re
+pattern = "(ID: (\d+))"
+str1 = "ID: 5853"
+str2 = "xID: 455"
+match1 = re.match(pattern, str1)
+match2 = re.match(pattern, str2)
+print(match1)
+print(match1.groups())
+print(match2)</code></pre>
+   <div>
+    <br>
+   </div> Of course, a link to documentation 
+   <a href="https://docs.python.org/3.4/library/re.html#re.regex.match" rel="nofollow noopener noreferrer">https://docs.python.org/3.4/library/re.html#re.regex.match</a>
+  </div>
+ </body>
+</html><br><b>Sample Input:</b><br>#This is sample code challenge<br>import random<br><br>def generate():<br>    num_tests = 10<br>    tests = []<br>    for test in range(num_tests):<br>        a = random.randrange(10)<br>        b = random.randrange(10)<br>        test_case = "{} {}".format(a, b)<br>        tests.append(test_case)<br>    return tests<br><br>def solve(dataset):<br>    a, b = dataset.split()<br>    return str(int(a)+int(b))<br><br>def check(reply, clue):<br>    return int(reply) == int(clue)<br><b>Sample Output:</b><br>5 num_tests<br>6 tests<br>8 a<br>9 b<br>10 test_case<br>15 a b<br><br><b>Sample Input:</b><br>#! /usr/bin/env python3<br>#from fractions import gcd<br><br>def euclid(a, b):<br>    while b:<br>        a, b = b, a % b<br>    return a<br># def euclid(n, m):<br>#     x = gcd(20, 8)<br>#     return x<br><br>lst = input().split()<br>n = int(lst[0])<br>m = int(lst[1])<br>print(euclid(n, m))<br><b>Sample Output:</b><br>6 a b<br>12 lst<br>13 n<br>14 m<br><br><b>Sample Input:</b><br>a, b, c = 12, 13, 15<br>for x in [1, 2, 3, 4]:<br>    a, b = x, x + 1<br>    # yo = x<br>    # to, to = 6, 5<br>    c, d = x + 2, x + 3  # that's ok<br><b>Sample Output:</b><br>1 a b c<br>3 a b<br>6 c d<br><br><b>Sample Input:</b><br>class HTTPDigestAuth:<br>    """Attaches HTTP Digest Authentication to the given Request object."""<br>    def __init__(self, username, password):<br>        self.username = username<br>        self.password = password<br>        # Keep state in per-thread local storage<br>        self._thread_local = threading.local()<br><b>Sample Output:</b><br>4 self.username<br>5 self.password<br>7 self._thread_local<br><br><br><font color="gray">Memory limit: 256 Mb</font><br><font color="gray">Time limit: 5s</font><br><br>

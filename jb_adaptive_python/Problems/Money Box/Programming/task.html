@@ -1,0 +1,21 @@
+<html>
+ <head></head>
+ <body>
+  <p>Implement the <b>MoneyBox</b> class to work with a virtual money box. </p> 
+  <p>Each money box has a limited capacity – the number of coins (an integer) that can fit into this particular money box. The class should support the storing of &nbsp;the number of coins inside the money box, provide an functionality to add coins to the money box and to find out, whether you can add some more coins, not exceeding its capacity. </p> 
+  <p>The class should look like the following:</p>
+  <pre></pre>
+  <pre><code class="language-python">class MoneyBox:
+    def __init__(self, capacity):
+        # constructor with the argument – capacity of the money box 
+    def can_add(self, v):
+&nbsp; &nbsp; &nbsp; &nbsp; # True, if you can add v coins, otherwise - False
+    def add(self, v):
+        # put v coins into the money box</code></pre>
+  <div> 
+   <p>When the money box is created, the number of coins in it equals to <b>0</b>.</p>
+   <p><b>Note:</b></p>
+   <p> It is guaranteed that the method <b>add(self, v) </b>will be called only if <b>can_add(self, v) </b>– <b>True</b>.</p>
+  </div>
+ </body>
+</html><br><br><font color="gray">Memory limit: 256 Mb</font><br><font color="gray">Time limit: 5s</font><br><br>

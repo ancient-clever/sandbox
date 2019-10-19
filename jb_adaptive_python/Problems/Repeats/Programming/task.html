@@ -1,0 +1,22 @@
+<html>
+ <head></head>
+ <body>
+  <p><b>Repeats</b></p> 
+  <p>In this problem, we will look on how to implement the symbol repetition.</p> 
+  <p>We can use the three different structure to implement the repeat:</p>
+  <ol>
+   <li>&nbsp;Wildcards { }, inside which you can locate the minimum/maximum number of repeats, which satisfy our needs, or the exact number of repeats that we look for. For example, the template "A{3, 5}" fits all substrings, consisting of consecutive symbols А, with length from 3 to 5, and the template "T{4}" fits only those substrings, which contain 4 T in a row.<br></li>
+   <li>Wildcard *. This wildcard means any number of occurrences of the character (or a group of characters): from zero to any desired number. Thus, the template "A*" fits all sequences consisting of any amount of A in a row, and an empty string (as zero also fits).<br></li>
+   <li>&nbsp;Wildcard +. This wildcard means any positive number of occurrences of the character (or a group of characters): from one to unlimited. Thus, the template "A+" fits all sequences consisting of any amount of consecutive A. Unlike "A*" - an empty string will not fit.</li>
+  </ol>
+  <p> All wildcards of the repeat are applied to the character, after which they recorded (or a group of characters).</p> 
+  <p>Usage examples:</p> 
+  <pre><code>import re
+results = re.findall("A+", "AAATATAGCGC")
+print(results)
+results = re.findall("TA{2}", "AATATAGCGTATA")
+print(results)</code></pre> 
+  <p>This problem has an input text - the list of phone numbers (one phone number per line). Your task is to check whether these phone numbers are "cool": the phone number is called "cool", if it contains 3 or more of the same digits in a row. For example, number 19992034050 is a "cool" one, but 19500237492 is not.</p> 
+  <p>Your task is to leave only the cool numbers: standard output should contain the "cool" numbers, each number on a separate line.</p>
+ </body>
+</html><br><b>Sample Input:</b><br>89273777416<br>89273777167<br>89273776902<br>89273778915<br>89273778982<br>89273774216<br>89273771708<br>89273772982<br>89273775302<br>89273775244<br>89273777007<br>89273778140<br>89273778817<br>89273770487<br>89273772728<br>89273773272<br>89273777273<br>89273779341<br>89273779862<br>89273772225<br><b>Sample Output:</b><br>89273777416<br>89273777167<br>89273777007<br>89273777273<br>89273772225<br><br><br><font color="gray">Memory limit: 256 Mb</font><br><font color="gray">Time limit: 5s</font><br><br>

@@ -1,0 +1,17 @@
+<html>
+ <head></head>
+ <body>
+  <p>Given non-negative integers n, k and array of integers from the range of <span class="math-tex">\( [0..10^9] \)</span> size <span class="math-tex">\( n \le 10^6 \)</span>. You need to find the k-th order statistics, i.e. to print the number, which would reside on the position with the index k (0..n-1) in the sorted array. Write a non-recursive algorithm using the "divide and conquer" method.</p> 
+  <p>Requirements for the additional memory: O(n). <br> Required average time complexity: O(n).</p> 
+  <p>The Partition function should be implemented using two iterators passing in the single direction from the start to the end of the array:</p> 
+  <ul> 
+   <li>Selected the reference element. The reference element is changed by the last element of the array.</li> 
+   <li>During the execution of the Partition function, the beginning of the array contains the elements, which are not larger than the reference one. Next placed the elements, which are strictly larger than the reference one. The end of the array contains unconsidered elements. The last element - reference element.</li> 
+   <li>Iterator (index) i specifies the beginning of the elements group, which are strictly larger than the reference one.</li> 
+   <li>Iterator j is larger than i, iterator j specifies the first unconsidered element.</li> 
+   <li>Algorithm step. Consider the element, which is specified by j. If it is larger than the reference element, we move j. If it is not grater than the reference one, we swap a[i] and a[j], move i and move j.</li> 
+   <li>At the end of the algorithm execution we change the reference element to the one, specified by iterator i.::</li>
+  </ul>
+  <div></div>
+ </body>
+</html><br><b>Sample Input:</b><br>10 0<br>3 6 5 7 2 9 8 10 4 1<br><b>Sample Output:</b><br>1<br><br><br><font color="gray">Memory limit: 256 Mb</font><br><font color="gray">Time limit: 2s</font><br><br>

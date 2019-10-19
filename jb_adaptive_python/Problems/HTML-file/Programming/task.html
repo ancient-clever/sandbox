@@ -1,0 +1,27 @@
+<html>
+ <head></head>
+ <body>
+  <p>Your program gets a link to an HTML-file as input.<br> You need to download this file, and then find all links in a form <b>&lt;a ... href="..." ... &gt;</b> inside it, and output a list of websites to which there is a link. </p> 
+  <p>In this problem a website – is a domain name with all subdomains. I.e., this is a sequence of symbols, which follows right after the protocol symbols, if any, up to the symbols of port or path, if any, excluding the cases with relative links in the form<br> <b>&lt;a href="../some_path/index.html"&gt;</b>.</p> 
+  <p>Please output websites in the alphabetical order.</p> 
+  <p><b>Example of an HTML file:</b></p>
+  <pre><b><code class="http"></code></b><code class="language-http">&lt;a href="http://stepic.org/courses"&gt;
+&lt;a href='https://stepic.org'&gt;
+&lt;a href='http://neerc.ifmo.ru:1345'&gt;
+&lt;a href="ftp://mail.ru/distib" &gt;
+&lt;a href="ya.ru"&gt;
+&lt;a href="www.ya.ru"&gt;
+&lt;a href="../skip_relative_links"&gt;</code><b><code class="http">
+</code></b></pre> 
+  <p><b> </b></p>
+  <p><b><b>Solution example:</b></b></p>
+  <pre><code class="language-http">mail.ru
+neerc.ifmo.ru
+stepic.org
+www.ya.ru
+ya.ru</code></pre>
+  <div>
+   <br>
+  </div>
+ </body>
+</html><br><br><font color="gray">Memory limit: 256 Mb</font><br><font color="gray">Time limit: 30s</font><br><br>

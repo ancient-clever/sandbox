@@ -1,0 +1,21 @@
+<html>
+ <head></head>
+ <body>
+  <p>One of the applications of multiple inheritance – extension of the class functionality in some pre-defined way. For example, if we need to log some information during class method invocation.</p> 
+  <p>Let use review the <b>Loggable</b> class:</p>
+  <pre></pre>
+  <pre></pre>
+  <pre><code class="language-python">import time
+class Loggable:
+    def log(self, msg):
+        print(str(time.ctime()) + ": " + str(msg))</code></pre>
+  <div>
+   <br>
+  </div>
+  <div> 
+   <p>It has the exactly one method <b>log</b>, which allows outputting to the log (in this case in stdout) some message, adding the current time.<br> </p> 
+   <p>Implement the class <b>LoggableList</b>, inheriting it from the classes <b>list </b>and <b>Loggable</b>, so that when adding an element to the list using the <b>append</b>&nbsp;method, the message containing the just added element would be sent to the log.</p> 
+   <p><b>Note</b><br> Your program should not contain the <b>Loggable </b>class. Your program will have this class available during the check, and it will contain the <b>log</b> method, described above.</p>
+  </div>
+ </body>
+</html><br><br><font color="gray">Memory limit: 256 Mb</font><br><font color="gray">Time limit: 2s</font><br><br>

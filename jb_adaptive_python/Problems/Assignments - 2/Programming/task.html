@@ -1,0 +1,44 @@
+<html>
+ <head></head>
+ <body>
+  <p>You can place multiple assignments in the single line:</p>
+  <pre><code class="language-python">string = "14 15 16"
+a, b, c = string.split(" ")</code></pre>
+  <div>
+   <br>
+  </div>
+  <div> 
+   <p>It could be useful to determine such assignments in the code automatically, and during this to highlight all variables within the assignment!</p> 
+   <p>But yes. We forgot. The code may contain comments (!), inside which assignment does not ocur, and it would be good to ignore assignments inside comments.</p> 
+   <p>Please remember that a comment begins with the # character and continues until the end of the line like in the following example:</p>
+  </div>
+  <div>
+   <pre><code>a, b, c = string.split(" ") # multiple assignment
+# a, b, c = string.split(" ") multiple assignment</code></pre>
+  </div>
+  <div>
+   <br>
+  </div>
+  <div></div>
+  <div> 
+   <p>We are interested only in the first string. </p> 
+   <p><span>Still we forgot that assignments might be for object attributes. Therefore, a variable can contain points, but may not begin with a point and may not contain two points in a row.</span></p> 
+   <p><span>Python code is given on input; there may be only one assignment per line, but with several variables. It is necessary to find all uncommented assignments and for each such assignment output a space separated line number and name of each variable (in the same order they are in the assignment).</span></p> 
+   <p>NB. In this problem it may be necessary to use re.match, instead of re.findall; the re.match function checks whether the string fits the pattern (and does not find all occurrences of the pattern in the string, as re.findall does), the re.match function returns MatchObject if the string (or the beginning of the string) fits the pattern, or None if it doesn't. MatchObject has the groups() method, which contains grouped symbols, example of the re.match usage:</p>
+   <pre><code class="language-python">import re
+pattern = "(ID: (\d+))"
+str1 = "ID: 5853"
+str2 = "xID: 455"
+match1 = re.match(pattern, str1)
+match2 = re.match(pattern, str2)
+print(match1)
+print(match1.groups())
+print(match2)</code></pre> And, of course, a link to the documentation:﻿&nbsp;
+   <a href="https://docs.python.org/3.4/library/re.html#re.regex.match" rel="nofollow noopener noreferrer" title="Link: https://docs.python.org/3.4/library/re.html#re.regex.match">https://docs.python.org/3.4/library/re.html#re.regex.match</a>
+  </div>
+  <div></div>
+  <div>
+   <br>
+  </div>
+ </body>
+</html><br><b>Sample Input:</b><br>#This is sample code challenge<br>import random<br><br>def generate():<br>    num_tests = 10<br>    tests = []<br>    for test in range(num_tests):<br>        a = random.randrange(10)<br>        b = random.randrange(10)<br>        test_case = "{} {}".format(a, b)<br>        tests.append(test_case)<br>    return tests<br><br>def solve(dataset):<br>    a, b = dataset.split()<br>    return str(int(a)+int(b))<br><br>def check(reply, clue):<br>    return int(reply) == int(clue)<br><b>Sample Output:</b><br>5 num_tests<br>6 tests<br>8 a<br>9 b<br>10 test_case<br>15 a b<br><br><b>Sample Input:</b><br>#! /usr/bin/env python3<br>#from fractions import gcd<br><br>def euclid(a, b):<br>    while b:<br>        a, b = b, a % b<br>    return a<br># def euclid(n, m):<br>#     x = gcd(20, 8)<br>#     return x<br><br>lst = input().split()<br>n = int(lst[0])<br>m = int(lst[1])<br>print(euclid(n, m))<br><b>Sample Output:</b><br>6 a b<br>12 lst<br>13 n<br>14 m<br><br><b>Sample Input:</b><br>a, b, c = 12, 13, 15<br>for x in [1, 2, 3, 4]:<br>    a, b = x, x + 1<br>    # yo = x<br>    # to, to = 6, 5<br>    c, d = x + 2, x + 3  # that's ok<br><b>Sample Output:</b><br>1 a b c<br>3 a b<br>6 c d<br><br><b>Sample Input:</b><br>class HTTPDigestAuth:<br>    """Attaches HTTP Digest Authentication to the given Request object."""<br>    def __init__(self, username, password):<br>        self.username = username<br>        self.password = password<br>        # Keep state in per-thread local storage<br>        self._thread_local = threading.local()<br><b>Sample Output:</b><br>4 self.username<br>5 self.password<br>7 self._thread_local<br><br><br><font color="gray">Memory limit: 256 Mb</font><br><font color="gray">Time limit: 5s</font><br><br>

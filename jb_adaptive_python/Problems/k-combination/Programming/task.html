@@ -1,0 +1,16 @@
+<html>
+ <head></head>
+ <body>
+  <p><b>k-combination</b> of a set is a subset of k distinct elements of this set.</p> 
+  <p>Two combinations are called <i><b></b></i><b>different</b><i><b></b></i>, if one of the combinations contains an element, which is not present in the other combination.</p> 
+  <p>The number of k-combinations of a set of <b>n</b> elements is the number of different such combinations. <br>Let’s write this number as <b>C(n, k)</b>.</p> 
+  <p><b>Example:</b><br> Let <b>n</b> = <b>3</b>, i.e. there are three elements <b>(1, 2, 3)</b>. Let <b>k </b>= <b>2</b>.<br> All the different 2-combination of <b>3</b> elements: <b>(1, 2)</b>, <b>(1, 3)</b>, <b>(2, 3)</b>.<br> There are three different combinations, thus <b>C(3, 2)</b> = <b>3</b>.</p> 
+  <p>It is easy to understand that <b>C(n, 0) = 1</b>, as you can select <b>0</b> elements from the set of <b>n</b> elements by the only way: namely, by not choosing anything.<br> Also it is easy to understand that if <b>k &gt; n</b>, than <b>C(n, k)</b> <b>= 0</b>, as it is impossible, for example, to choose five elements from the three given ones.</p> 
+  <p>The following recurrent formula is used to calculate <b>C(n, k)</b> in the other cases: <br> <b>C(n, k) = C(n - 1, k) + C(n - 1, k - 1)</b>.</p> 
+  <p>Implement the program, which calculates <b>C(n, k)</b> for the specified <b>n</b> and <b>k</b>.</p> 
+  <p>As input your program gets the line, containing the two integers <b>n</b> and <b>k</b> (<b>1 </b>≤ <b>n </b>≤ <b>10</b>, <b>0 </b>≤ <b>k </b>≤ <b>10</b>).<br> Your program should output the single number: <b>C(n, k)</b>.</p> 
+  <p><b>Note:</b><br> You can read the two numbers <b>n </b>and <b>k</b>, for example, as follows:</p>
+  <p><b></b></p>
+  <pre><b><code class="python">n, k = map(int, input().split())</code></b></pre>
+ </body>
+</html><br><b>Sample Input:</b><br>3 2<br><b>Sample Output:</b><br>3<br><br><b>Sample Input:</b><br>10 5<br><b>Sample Output:</b><br>252<br><br><br><font color="gray">Memory limit: 256 Mb</font><br><font color="gray">Time limit: 2s</font><br><br>

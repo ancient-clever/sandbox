@@ -1,0 +1,32 @@
+<html>
+ <head></head>
+ <body>
+  <p><b>Grouping</b></p> 
+  <p>In this problem, we will deal with the implementation of a group of symbols.</p> 
+  <p>Wildcards "<b>( )</b>" are used to group symbols. </p> 
+  <p>Groups of symbols allow us using repeats on sequences: this way, the "<b>(ab)+</b>" template will fit for any string like "<b>ababababab...ab</b>".</p> 
+  <p>In addition, symbols grouping allows us to find an interesting substrings inside a long pattern: for example, if we know that somewhere inside the string is an "<b>ID: 254</b>" substring, then by using the "<b>ID: (\d+)</b>" pattern (<b>\d</b> means any number) we will be able to get only the number 254 we are interested in:</p>
+  <pre><code class="language-python">import re
+string = "ID: 254, ID: 14, ID: 88"
+ids = re.findall("ID: (\d+)", string)
+print(ids)</code></pre>
+  <div>
+   <br>
+  </div>
+  <div> 
+   <p>It is important to understand that the findall function from the re module returns a tuple from all groups, which it found; and if the groups are not obviously defined, it considers the whole pattern as one group. If we change the pattern to "(ID: (\d+))", the function returns tuples with the two elements: the whole pattern and its numeric ID.</p>
+  </div>
+  <pre><code class="language-python">import re
+string = "ID: 254, ID: 14, ID: 88"
+ids = re.findall("(ID: (\d+))", string)
+print(ids)</code></pre>
+  <p><br></p> 
+  <b>NB</b>. It is important to understand that the groups will be listed within the tuple in the order of their occurrence in the pattern. (In the order of occurrence of the respective groups’ opening parentheses)
+  <br>
+  <br>For this problem, input is the code in Python. Your task is to find all the assignment in this code, and output, where they occurred and the value of what variable they have changed!
+  <br>
+  <br>Please remember, that according to the PEP 8 standard, the assignment operator is separated by a single space from both ends (unlike passing an argument). This way an assignment is deemed valid and we consider that (something, consisting only from letters, numbers and underscore) = (something). In this problem we consider that a line may contain only one assignment and only to one variable.
+  <br>
+  <br>For each assignment, you need to output in a separate line – the line number (line numbers are numbered from one) and the name of the variable, whose value has been changed. Line numbers must be in ascending order.
+ </body>
+</html><br><b>Sample Input:</b><br>#This is sample code challenge<br>import random<br><br>def generate():<br>    num_tests = 10<br>    tests = []<br>    for test in range(num_tests):<br>        a = random.randrange(10)<br>        b = random.randrange(10)<br>        test_case = "{} {}".format(a, b)<br>        tests.append(test_case)<br>    return tests<br><br>def combinations(n, k):<br>    if 0 <= k <= n:<br>        ncomb = 1<br>        kcomb = 1<br>        for i in range(1, min(k, n - k) + 1):<br>            ncomb *= n<br>            kcomb *= t<br>            n -= 1<br>        return ncomb // kcomb<br>    else:<br>        return 0<br><br>lst = input().split()<br>n = int(lst[0])<br>k = int(lst[1])<br>print(combinations(n, k))<br><b>Sample Output:</b><br>5 num_tests<br>6 tests<br>8 a<br>9 b<br>10 test_case<br>16 ncomb<br>17 kcomb<br>26 lst<br>27 n<br>28 k<br><br><b>Sample Input:</b><br>str1 = input()<br>lst = []<br>numbers = str1.split(" ")<br>for i in numbers:<br>    lst.append(int(i))<br>mean_value = sum(lst)/(len(lst))<br>print(mean_value)<br><b>Sample Output:</b><br>1 str1<br>2 lst<br>3 numbers<br>6 mean_value<br><br><b>Sample Input:</b><br>s = input()<br>s = s.lower()<br>d = dict()<br>l = []<br>for i in s:<br>    l.append(i)<br>    d[i] = 0<br>for i in l:<br>    for key in d:<br>        if key == i:<br>            d[i] += 1<br>keys = d.keys()<br>keys = list(keys)<br>keys.sort()<br>for i in keys:<br>    print(i + ' ' + str(d[i]))<br><b>Sample Output:</b><br>1 s<br>2 s<br>3 d<br>4 l<br>12 keys<br>13 keys<br><br><br><font color="gray">Memory limit: 256 Mb</font><br><font color="gray">Time limit: 5s</font><br><br>

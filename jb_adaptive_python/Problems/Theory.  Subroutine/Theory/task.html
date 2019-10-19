@@ -1,0 +1,86 @@
+<html>
+ <head></head>
+ <body>
+  Pulling together the code fragments from the previous section, the whole program looks like this: &nbsp;
+  <div></div>
+  <pre><code class="language-python">def&nbsp;print_lyrics():
+    print("I'm lumberjack, and I'm okay.")
+    print("I'm sleep all night and I work all day.")
+def&nbsp;repeat_lyrics():
+    print_lyrics()
+    print_lyrics()
+repeat_lyrics()</code></pre>
+  <div>
+   <br>
+  </div>
+  <div>
+   This program contains two function definitions: 
+   <b>print_lyrics</b>&nbsp;and 
+   <b>repeat_lyrics</b>. Function definitions get executed just like other statements, but the effect is to create function objects. The statements inside the function do not get executed until the function is called, and the function definition generates no output.
+  </div>
+  <div>
+   As you might expect, you have to create a function before you can execute it. In other words, the function definition has to be executed before the first time it is called.&nbsp;
+   <br>
+  </div>
+  <div>
+   <br>
+  </div>
+  <div>
+   In order to ensure that a function is defined before its first use, you have to know the order in which statements are executed, which is called the 
+   <b>flow of execution</b>.&nbsp;
+  </div>
+  <div>
+   Execution always begins at the first statement of the program. Statements are executed one at a time, in order from top to bottom. Function definitions do not alter the flow of execution of the program, but remember that statements inside the function are not executed until the function is called.&nbsp;
+  </div>
+  <div>
+   A function call is like a detour in the flow of execution. Instead of going to the next statement, the flow jumps to the body of the function, executes all the statements there, and then comes back to pick up where it left off.
+   <br>
+  </div>
+  <div>
+   <br>
+  </div>
+  <div>
+   Some of the built-in functions we have seen require arguments. For example, when you call 
+   <b>math.sin</b> you pass a number as an argument. Some functions take more than one argument: 
+   <b>math.pow</b> takes two, the base and the exponent.&nbsp;
+  </div>
+  <div>
+   Inside the function, the arguments are assigned to variables called parameters. Here is an example of a user-defined function that takes an argument:
+  </div>
+  <div></div>
+  <pre><code class="language-python">def&nbsp;print_twice(bruce):
+    print(bruce)
+    print(bruce)</code></pre>
+  <div></div>
+  <div>
+   <br>
+  </div>
+  <div>
+   This function assigns the argument to a parameter named 
+   <b>bruce</b>. When the function is called, it prints the value of the parameter (whatever it is) twice.&nbsp;
+  </div>
+  <div>
+   This function works with any value that can be printed.
+   <br>
+  </div>
+  <div></div>
+  <pre><code class="language-python">&gt;&gt;&gt;&nbsp;print("Spam")
+Spam
+Spam</code></pre>
+  <div style="text-align: right;">
+   [Think Python by Allen B. Downey] 
+   <br>
+  </div>
+  <div> 
+   <div>
+    <p>Coming from other languages, you might object that our functions&nbsp;is not a function but a procedure since it doesn’t return a value. In fact, even functions without a <b>return</b> statement do return a value, albeit a rather boring one. This value is called <samp>None</samp>&nbsp;(it’s a built-in name). Writing the value <b>None</b>&nbsp;is normally suppressed by the interpreter if it would be the only value written.<br></p>
+    <p>The <b>return</b> statement returns with a value from a function:&nbsp;</p>
+    <pre><pre><code class="language-python">def functionname(arg1,arg2):
+     return arg1+arg2﻿</code></pre><pre><pre><code class="language-python">﻿&gt;&gt;&gt; t = functionname(24,24)
+&gt;&gt;&gt; print(t)
+48</code></pre></pre></pre>
+    <p>See&nbsp;more&nbsp;here:<br> <a href="https://en.wikibooks.org/wiki/Python_Programming/Functions" rel="nofollow noopener noreferrer" title="Link: https://en.wikibooks.org/wiki/Python_Programming/Functions">https://en.wikibooks.org/wiki/Python_Programming/Functions</a><br><a href="https://docs.python.org/3.3/tutorial/controlflow.html#defining-functions" rel="nofollow noopener noreferrer" title="Link: https://docs.python.org/3.3/tutorial/controlflow.html#defining-functions">https://docs.python.org/3.3/tutorial/controlflow.html#defining-functions</a></p> 
+   </div>
+  </div>
+ </body>
+</html>

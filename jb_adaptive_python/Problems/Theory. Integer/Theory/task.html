@@ -1,0 +1,155 @@
+<html>
+ <head></head>
+ <body>
+  <b>Integer:</b> A type that represents whole numbers.
+  <div>
+   <br>
+  </div>
+  <div>
+   If you are not sure what type a value has, the interpreter can tell you.&nbsp;
+   <br>
+  </div>
+  <div></div>
+  <pre><code class="language-python">&gt;&gt;&gt; type(17)
+&lt;type 'int'&gt;</code></pre>
+  <div>
+   Not surprisingly, integers belong to the type&nbsp;int.
+  </div>
+  <div>
+   <br>
+  </div>
+  <div>
+   One of the most powerful features of a programming language is the ability to manipulate variables. A variable is a name that refers to a value. An assignment statement creates new variables and gives them values:&nbsp;
+  </div>
+  <div>
+   <pre><code class="language-python">&gt;&gt;&gt; n&nbsp;=&nbsp;17</code></pre>
+  </div>
+  <div>
+   This example makes one assignments –&nbsp;a integer to a new variable named 
+   <span class="math-tex">\( n \)</span>.
+  </div>
+  <div>
+   <br>
+   <b>Operators</b> are special symbols that represent computations like addition and multiplication. The values the operator is applied to are called 
+   <b>operands</b>. The operators 
+   <span class="math-tex">\( +, -, *, / \)</span>&nbsp;and 
+   <span class="math-tex">\( ** \)</span>&nbsp;perform addition, subtraction, multiplication, division and exponentiation, as in the following examples:&nbsp;
+  </div>
+  <div style="text-align: right;">
+   <pre><code class="language-python">20+32   hour-1   hour*60+minute   minute/60   5**2   (5+9)*(15-7)</code></pre>&nbsp;[Think Python by Allen&nbsp;B. Downey]&nbsp;
+  </div>
+  <div style="text-align: left;">
+   <br>
+  </div>
+  <div style="text-align: left;">
+   Int type support the following operations, sorted by ascending priority:
+  </div>
+  <div style="text-align: left;">
+   <i><b>&nbsp; &nbsp; &nbsp; &nbsp; x</b></i>
+   <b>&nbsp;+ </b>
+   <i><b>y</b></i>
+   <i>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</i>sum of 
+   <i>x</i>&nbsp;and 
+   <i>y</i>
+  </div>
+  <div style="text-align: left;">
+   <i><b>&nbsp; &nbsp; &nbsp; &nbsp; x</b></i>
+   <b>&nbsp;- </b>
+   <i><b>y</b>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</i>difference of 
+   <i>x</i>&nbsp;and 
+   <i>y</i>
+  </div>
+  <div style="text-align: left;">
+   <i><b>&nbsp; &nbsp; &nbsp; &nbsp; x</b></i>
+   <b>&nbsp;* </b>
+   <i><b>y </b>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;</i>product of 
+   <i>x</i>&nbsp;and 
+   <i>y</i>
+  </div>
+  <div style="text-align: left;">
+   <i><b>&nbsp; &nbsp; &nbsp; &nbsp; x</b></i>
+   <b>&nbsp;/ </b>
+   <i><b>y &nbsp;</b>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</i>quotient of 
+   <i>x</i>&nbsp;and 
+   <i>y</i>
+  </div>
+  <div style="text-align: left;">
+   <i><b>&nbsp; &nbsp; &nbsp; &nbsp; x</b></i>
+   <b>&nbsp;// </b>
+   <i><b>y </b>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</i>(floored) quotient of 
+   <i>x</i>&nbsp;and 
+   <i>y</i>
+  </div>
+  <div style="text-align: left;">
+   <i><b>&nbsp; &nbsp; &nbsp; &nbsp; x</b></i>
+   <b>&nbsp;% </b>
+   <i><b>y</b>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;</i>remainder of 
+   <i>x</i>&nbsp;/ 
+   <i>y</i>
+  </div>
+  <div style="text-align: left;">
+   <b>&nbsp; &nbsp; &nbsp; &nbsp; -</b>
+   <i><b>x &nbsp;</b>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</i>
+   <i>x</i>&nbsp;negated
+  </div>
+  <div style="text-align: left;">
+   <b>&nbsp; &nbsp; &nbsp; &nbsp; +</b>
+   <i><b>x </b>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</i>
+   <i>x</i>&nbsp;unchanged
+  </div>
+  <div style="text-align: left;">
+   <b>&nbsp; &nbsp; &nbsp; &nbsp; abs(</b>
+   <i><b>x</b></i>
+   <b>)</b>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;absolute value or magnitude of 
+   <i>x</i>
+  </div>
+  <div style="text-align: left;">
+   <b>&nbsp; &nbsp; &nbsp; &nbsp; int(</b>
+   <i><b>x</b></i>
+   <b>) &nbsp; </b>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+   <i>x</i>&nbsp;converted to integer
+  </div>
+  <div style="text-align: left;">
+   <b>&nbsp; &nbsp; &nbsp; &nbsp; long(</b>
+   <i><b>x</b></i>
+   <b>) &nbsp; </b>&nbsp; &nbsp; &nbsp;
+   <i>x</i>&nbsp;converted to long integer
+  </div>
+  <div style="text-align: left;">
+   <b>&nbsp; &nbsp; &nbsp; &nbsp; float(</b>
+   <i><b>x</b></i>
+   <b>) &nbsp; </b>&nbsp; &nbsp;&nbsp;
+   <i>x</i>&nbsp;converted to floating point
+  </div>
+  <div style="text-align: left;">
+   <b>&nbsp; &nbsp; &nbsp; &nbsp; pow(</b>
+   <i><b>x</b></i>
+   <b>, </b>
+   <i><b>y)</b></i>&nbsp; &nbsp;&nbsp;
+   <i>x</i>&nbsp;to the power 
+   <i>y</i>
+  </div>
+  <div style="text-align: left;">
+   <i><b>&nbsp; &nbsp; &nbsp; &nbsp; x</b></i>
+   <b>&nbsp;** </b>
+   <i><b>y </b>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</i>
+   <i>x</i>&nbsp;to the power 
+   <i>y</i>
+   <div style="text-align: left;">
+    <div style="text-align: left;"> 
+    </div> 
+   </div> 
+   <br>See&nbsp;more&nbsp;here:&nbsp;﻿
+   <br>
+   <a href="https://en.wikibooks.org/wiki/Python_Programming/Numbers" rel="nofollow noopener noreferrer">https://en.wikibooks.org/wiki/Python_Programming/Numbers</a>
+   <div style="text-align: left;"> 
+    <div style="text-align: left;"> 
+     <div style="text-align: left;">
+      <p style="text-align: left;"> <a href="https://docs.python.org/3.3/library/stdtypes.html#index-15" rel="nofollow noopener noreferrer">https://docs.python.org/3.3/library/stdtypes.html#index-15</a> </p> 
+     </div>
+    </div> 
+    <br>
+   </div>
+  </div>
+ </body>
+</html>

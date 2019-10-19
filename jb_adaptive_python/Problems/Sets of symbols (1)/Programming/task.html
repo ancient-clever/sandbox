@@ -1,0 +1,19 @@
+<html>
+ <head></head>
+ <body>
+  <p>In this problem we will learn how to specify sets of symbols in regular expressions.</p> 
+  <p>For this we will use the [ ] wild cards.</p> 
+  <p>Inside the square brackets we would be able to list all the characters that we are satisfied with: we can write the pattern "[abc]bc", which will fit the strings abc, bbc, и cbc:</p>
+  <pre><code>import re
+results = re.findall("[abc]bc", "abc bbc cbc abb")
+print(results)</code></pre>
+  <p><span>The expression [abc] should be regarded as one symbol, which describes: either a, or b, or с.</span><br></p> 
+  <p>Other way to specify a set of symbols is to use the alteration wildcard |.</p> 
+  <p>Let us describe a group of characters inside the parentheses and use the alteration character: "(a|b|c)bc"</p>
+  <pre><code class="language-python">import re
+results = re.findall("(a|b|c)bc", "abc bbc cbc abb")
+print(results)</code></pre>
+  <p><span>Compared to a set of symbols, specified by the [ ] wildcards, alteration sign can be used for a non-single-character sequences: &nbsp;thus, three strings - "abcx", "abex" and "ddx" will fit for the pattern "(abc|abe|dd)x".</span><br></p> 
+  <p>In this problem, you get text on input. By using regular expressions you need to find all the occurrences of the "you" or "You" substring in it and output their quantity.</p>
+ </body>
+</html><br><b>Sample Input:</b><br>What are you doing here?<br><b>Sample Output:</b><br>1<br><br><b>Sample Input:</b><br>You are not you when you are hungry<br><b>Sample Output:</b><br>3<br><br><b>Sample Input:</b><br>PART I<br>IT WAS A PLEASURE TO BURN<br>IT was a special pleasure to see things eaten, to see things blackened and changed. With the brass nozzle in his fists, with this great python spitting its venomous kerosene upon the world, the blood pounded in his head, and his hands were the hands of some amazing conductor playing all the symphonies of blazing and burning to bring down the tatters and charcoal ruins of history. With his symbolic helmet numbered 451 on his stolid head, and his eyes all orange fl<br><b>Sample Output:</b><br>0<br><br><br><font color="gray">Memory limit: 256 Mb</font><br><font color="gray">Time limit: 5s</font><br><br>

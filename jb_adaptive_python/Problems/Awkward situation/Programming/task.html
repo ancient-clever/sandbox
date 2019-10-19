@@ -1,0 +1,42 @@
+<html>
+ <head></head>
+ <body>
+  <p>You are given a description of the exception classes inheritance in the following format. <br> <b>&lt;exception name 1&gt; : &lt;exception name 2&gt; &lt;exception name 3&gt; ... &lt;exception name k</b>&gt;<br> It means that <b>exception 1</b>&nbsp;is inherited from <b>exception 2</b>, <b>exception 3</b>, etc.</p> 
+  <p>Or equivalent to the entry:</p>
+  <div>
+   <pre><code class="language-python">class Error1(Error2, Error3 ... ErrorK):
+    pass</code></pre>
+   <p>Anthony wrote the code that looks as follows.<br></p>
+   <pre><code class="language-python">try:
+   foo()
+except &lt;name 1&gt;:
+   print("&lt;name 1&gt;")
+except &lt;name 2&gt;:
+   print("&lt;name 2&gt;")
+...</code></pre>
+   <p>Kyle looked at this code and told Anthony that he may not catch some of the exceptions, as earlier their ancestor may be caught in the code. But Anthony does not remember what exceptions are inherited from what. Help him to escape this awkward situation. Write a program that will find which exception handlings can be removed from the code.</p> 
+   <p><b>Important note:</b></p> 
+   <p>The types of exceptions are not created. There is no need to create classes of exceptions either. Please model this process and understand which exceptions don't need to be called, because we have previously caught their ancestors.</p> 
+   <p><b>Input data format</b><b></b></p> 
+   <p>First line of the input data contains integer <b>n</b>&nbsp;- the number of <b>exception</b> classes.</p> 
+   <p>The next <b>n</b>&nbsp;lines contain the description of the class inheritance. The <b>i-</b>th line specified from which classes the <b>i-</b>th class is inherited. Please note that a class may not inherit from anything. It is guaranteed that the class does not inherit from itself (directly or indirectly), that the class does not inherit explicitly from one class more than once.</p> 
+   <p>The next line contains number <b>m</b>&nbsp;- the number of exceptions to handle.<br> Next <b>m</b>&nbsp;lines contain the names of exceptions in the order, in which they were written in the Anthony's code.<br> It is guaranteed that no exception is handled twice.</p> 
+   <p><b>Output data format</b><b></b></p> 
+   <p>In a separate line output a name of each exception, the handling of which can be removed from the code without changing the behaviour of the program. Output these &nbsp;names in the same order in which they were in the input data.</p> 
+   <p><b>Test example 1</b><b></b></p> 
+   <p>Let’s check the code:</p> 
+   <pre><code class="language-python">try:
+   foo()
+except ZeroDivision :
+   print("ZeroDivision")
+except OSError:
+   print("OSError")
+except ArithmeticError:
+   print("ArithmeticError")
+except FileNotFoundError:
+   print("FileNotFoundError")
+...</code></pre> 
+   <p><br>Kyle looked at this code and told Anthony that he may not catch the exception FileNotFoundError, because we already catch OSError – the ancestor of FileNotFoundError.</p>
+  </div>
+ </body>
+</html><br><b>Sample Input:</b><br>4<br>ArithmeticError<br>ZeroDivisionError : ArithmeticError<br>OSError<br>FileNotFoundError : OSError<br>4<br>ZeroDivisionError<br>OSError<br>ArithmeticError<br>FileNotFoundError<br><br><b>Sample Output:</b><br>FileNotFoundError<br><br><br><font color="gray">Memory limit: 256 Mb</font><br><font color="gray">Time limit: 2s</font><br><br>

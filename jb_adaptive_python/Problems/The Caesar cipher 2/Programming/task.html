@@ -1,0 +1,12 @@
+<html>
+ <head></head>
+ <body>
+  <p>The Caesar cipher is to replace each character of the input string to the symbol, located several positions to the left or right of it in the alphabet.</p> 
+  <p>The shift is the same for all symbols. The shift the cyclical, i.e. if the single right shift is applied to the last alphabet character, it will be replaced by the first character (and vice versa for the single left shift).</p>
+  <p>Write a program, which encodes the text by the Caesar cipher.&nbsp;It should encode the symbols from the <a href="http://unicode-table.com/blocks/emoticons/" rel="nofollow noopener noreferrer">1F600—1F64F</a>&nbsp;interval of the Unicode character table. We use UTF-8 encoding.</p> 
+  <p><b>Input format:</b><br></p>
+  <p> The first line contains the encryption shift (an integer). A positive number corresponds to a shift to the right. The second line contains a non-empty phrase for encryption. </p> 
+  <p><i>Ignore if rectangles are displayed instead of some symbols. It means that your font does not contain these symbols. This does not have any influence on the solution of the problem.</i></p> 
+  <p><b>Output format:</b><br><br>The single line with a phrase: <code>Result: "..."</code> , where the encoded sequence is included inside the quotes.</p>
+ </body>
+</html><br><b>Sample Input:</b><br>1<br>😀🙏😇<br><b>Sample Output:</b><br>Result: "😁😀😈"<br><br><b>Sample Input:</b><br>1<br>😀😁😂😃😄😅😆😇😈😉😊😋😌😍😎😏😐😑😒😓😔😕😖😗😘😙😚😛😜😝😞😟😠😡😢😣😤😥😦😧😨😩😪😫😬😭😮😯😰😱😲😳😴😵😶😷😸😹😺😻😼😽😾😿🙀🙁🙂🙃🙄🙅🙆🙇🙈🙉🙊🙋🙌🙍🙎🙏<br><b>Sample Output:</b><br>Result: "😁😂😃😄😅😆😇😈😉😊😋😌😍😎😏😐😑😒😓😔😕😖😗😘😙😚😛😜😝😞😟😠😡😢😣😤😥😦😧😨😩😪😫😬😭😮😯😰😱😲😳😴😵😶😷😸😹😺😻😼😽😾😿🙀🙁🙂🙃🙄🙅🙆🙇🙈🙉🙊🙋🙌🙍🙎🙏😀"<br><br><br><font color="gray">Memory limit: 256 Mb</font><br><font color="gray">Time limit: 5s</font><br><br>

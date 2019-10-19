@@ -1,0 +1,20 @@
+<html>
+ <head></head>
+ <body>
+  <p> Write a function&nbsp;&nbsp;<code>get_int(start_message, error_message, end_message)</code>,&nbsp;taking three strings as arguments. </p>
+  <p>The function should ask users for the input until an integer is entered (a string, which is accepted by the <code>int</code> function without errors).</p>
+  <p> Before the first request you should enter the &nbsp;<code>start_message</code>, argument, after each faulty input you should output the value of the string <code>error_message</code> and in case of a successful input - the string <code>end_message</code>&nbsp;and return the received integer from the function (see example below). Each output message should be on a separate line. </p>
+  <p>For example, the call</p>
+  <pre><code class="language-python">x = get_int('Input int number:', 'Wrong value. Input int number:', 'Thank you.')</code></pre>
+  <p>Should work as follows (each second line describes user input):</p>
+  <pre><code class="language-python">Input int number:
+ten
+Wrong value. Input int number:
+ten (10)
+Wrong value. Input int number:
+10
+Thank you.</code></pre>
+  <p>After which the value of the variable x will be equal to 10.</p>
+  <p>The code of the solution should not contain the call of the get_int function. It is guaranteed that at some point the user will enter an integer.</p>
+ </body>
+</html><br><br><font color="gray">Memory limit: 256 Mb</font><br><font color="gray">Time limit: 5s</font><br><br>

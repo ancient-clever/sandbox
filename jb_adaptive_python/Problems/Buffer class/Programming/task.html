@@ -1,0 +1,36 @@
+<html>
+ <head></head>
+ <body>
+  <p>You are given a sequence of integers, and you need to process it and output the sum of the first five numbers of the sequence, then the sum of the second five numbers, and so on.</p> 
+  <p>However, consistency is not given to you all at once. With the course of time, you get its subsequent parts. For example, the first three elements, then the next six elements, then the next two ones, etc.</p> 
+  <p>Implement the <b>Buffer</b> class, which will store the sequence elements and output the sum of the five consequent elements as accumulation proceeds.</p> 
+  <p>One of the requirements for the class is that it should not store more elements than it is necessary, that is it does not have to store the elements that are already included in the five, for which the sum was displayed.</p> 
+  <p>The class should look like the below</p>
+  <pre></pre>
+  <pre><code class="language-python">class Buffer:
+    def __init__(self):
+        # constructor without arguments
+    
+    def add(self, *a):
+        # add the next part of the sequence&nbsp; 
+&nbsp; &nbsp; 
+    def get_current_part(self):
+        # return the currently stored elements of the sequence in the order, in which they 
+        # were added</code></pre>
+  <p><br></p>
+  <p>An example of working with the class&nbsp;<br></p>
+  <pre><code class="language-python">buf = Buffer()
+buf.add(1, 2, 3)
+buf.get_current_part() # return [1, 2, 3]
+buf.add(4, 5, 6) # print(15) – output of the sum of the first five elements
+buf.get_current_part() # return [6]
+buf.add(7, 8, 9, 10) # print(40) – output the sum of the second five elements
+buf.get_current_part() # return []
+buf.add(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1) # print(5), print(5) – output the sum of the third and fourth five elements
+buf.get_current_part() # return [1]</code></pre>
+  <div>
+   <br>
+  </div> 
+  <p>Please note, that when executing the <b>add</b> method, you may need to output the sum of fives several times, until the buffer will not contain less than five elements.</p>
+ </body>
+</html><br><br><font color="gray">Memory limit: 256 Mb</font><br><font color="gray">Time limit: 5s</font><br><br>

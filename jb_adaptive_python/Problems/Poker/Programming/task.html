@@ -1,0 +1,35 @@
+<html>
+ <head></head>
+ <body>
+  <p>Poker deck contains 52 cards. Each of the cards has</p> 
+  <ul> 
+   <li><b>suit</b>: clubs, diamonds, hearts and spades (marked as C, D, H, S);</li> 
+   <li><b>face value</b><b></b>: values from 2 to 10, jack, queen, king, ace (marked as 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K, A).</li> 
+  </ul> 
+  <p>During calculation, the card values are used as described above: &nbsp;2 has the lowest value, and ace - the highest.</p> 
+  <p>Poker combination consists of five cards. Combinations are ranked according to the following order (from lowest to highest):</p>
+  <p><i><b>High Card</b></i><b>&nbsp;</b></p> 
+  <p>If there are no any of the following combinations, the player with highest card in the hand wins.</p> 
+  <p><i><b>Pair</b></i><b>&nbsp;</b> </p> 
+  <p>Two out of five cards have the same value.</p> 
+  <p><i><b>Two Pairs</b></i><b>&nbsp;</b></p> 
+  <p>The hand contains two different Pair combinations.</p> 
+  <p><i><b>Three of a Kind</b></i><b>&nbsp;</b></p> 
+  <p>Three cards in the hand have the same value.</p> 
+  <p><i><b>Straight</b></i><b>&nbsp;</b></p> 
+  <p>The hand consists of the five cards having subsequent values.</p> 
+  <p><i><b>Flush</b></i><b>&nbsp;</b></p> 
+  <p>The hand contains five cards of the same suit.</p> 
+  <p><i><b>Full House</b></i><b>&nbsp;</b></p> 
+  <p>Three cards are of the same value, the two other card form a Pair.</p> 
+  <p><i><b>Four of a Kind</b></i><b>&nbsp;</b></p> 
+  <p>Four cards of the same value.</p> 
+  <p><i><b>Straight Flush</b></i><b>&nbsp;</b></p> 
+  <p>Five cards of the same suit in a row.</p> 
+  <p><i><b>Royal Flush</b></i><b>&nbsp;</b></p> 
+  <p>Consists of the ace, king, queen, jack and ten of a suit.</p> 
+  <p>Write a program that gets the input of the five cards and outputs the senior poker combination, which is formed by these cards.<br></p> 
+  <p><b>Input format:</b><br> Single string, which specifies the five cards in the &lt;value&gt;&lt;suit&gt; format, separated by a space.</p> 
+  <p><b>Output format:</b><br> The name of the senior combination in the given five cards.</p>
+ </body>
+</html><br><b>Sample Input:</b><br>10C JC QC KC AC<br><b>Sample Output:</b><br>Royal Flush<br><br><br><font color="gray">Memory limit: 256 Mb</font><br><font color="gray">Time limit: 5s</font><br><br>

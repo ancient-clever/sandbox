@@ -1,0 +1,8 @@
+<html>
+ <head></head>
+ <body>
+  <p>Given the sorted array of various integers A[0..n-1] and the array of integers B[0..m-1]. For each of the element of the array B[i] find the minimum index of the array element A[k], nearest to B[i].</p> 
+  <p>Search operation time for each element B[i] should be O(log(k)).</p> 
+  <p><i>Hint.</i> Please note that the time complexity should depend on the response index – k. To achieve this asymptotic behaviour try to find an interval in the form of <span class="math-tex">\( [2^p, 2^{p+1}] \)</span> , containing the resulting point, and only after this perform a traditional binary search.</p>
+ </body>
+</html><br><b>Sample Input:</b><br>3<br>10 20 30<br>3<br>9 15 35<br><b>Sample Output:</b><br>0 0 2<br><br><b>Sample Input:</b><br>3<br>10 20 30<br>4<br>8 9 10 32<br><b>Sample Output:</b><br>0 0 0 2<br><br><b>Sample Input:</b><br>10<br>21 30 31 41 46 56 65 71 78 87<br>1<br>35<br><b>Sample Output:</b><br>2<br><br><b>Sample Input:</b><br>10<br>21 24 27 29 33 35 41 51 53 62<br>1<br>29<br><b>Sample Output:</b><br>3<br><br><br><font color="gray">Memory limit: 256 Mb</font><br><font color="gray">Time limit: 5s</font><br><br>

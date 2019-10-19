@@ -1,0 +1,109 @@
+<html>
+ <head></head>
+ <body>
+  <div>
+   A text file is a sequence of characters stored on a permanent medium like a hard drive, flash memory, or CD-ROM
+   <br>
+  </div>
+  <div>
+   <br>
+  </div>
+  <div>
+   The built-in function 
+   <span class="math-tex">\( open \)</span> takes the name of the file as a parameter and returns a file object you can use to read the file.&nbsp;
+  </div>
+  <div>
+   <pre><code class="language-python">&gt;&gt;&gt; fin = open('output.txt')
+&gt;&gt;&gt; print(fin)
+&lt;open file 'output.txt', mode 'r' at 0xb7f4b380&gt;</code></pre>
+   <div></div>
+  </div>
+  <div>
+   <br>
+  </div>
+  <div>
+   ﻿The file object provides several methods for reading, including 
+   <span class="math-tex">\( readline \)</span>, which reads characters from the file until it gets to a newline and returns the result as a string:&nbsp;
+  </div>
+  <div></div>
+  <pre><code class="language-python">&gt;&gt;&gt;&nbsp;fin.readline()
+'aa\r\n'</code></pre>
+  <div>
+   <br>
+  </div>
+  <div>
+   The first word in this particular list is “aa,” which is a kind of lava. The sequence 
+   <span class="math-tex">\( \r\n \)</span>&nbsp;represents two whitespace characters, a carriage return and a newline, that separate this word from the next.
+  </div>
+  <div></div>
+  <div>
+   The file object keeps track of where it is in the file, so if you call 
+   <span class="math-tex">\( readline \)</span>&nbsp;again, you get the next word: 
+   <div></div>
+   <pre><code class="language-python">&gt;&gt;&gt; fin.readline()
+'aah\r\n'</code></pre>
+   <div></div>
+   <div>
+    <br>
+   </div>The next word is “aah,” which is a perfectly legitimate word, so stop looking at me like that.
+   <br>
+  </div>
+  <div>
+   <br>
+  </div>
+  <div>
+   To write a file, you have to open it with mode 
+   <span class="math-tex">\( 'w' \)</span> as a second parameter:&nbsp;
+  </div>
+  <div></div>
+  <pre><code class="language-python">&gt;&gt;&gt;&nbsp;fout =&nbsp;open('output.txt', 'w')
+&gt;&gt;&gt;&nbsp;print(fout)
+&lt;open file 'output.txt', mode 'w' at 0xb7eb2410&gt;</code></pre>
+  <div>
+   <br>
+  </div>
+  <div>
+   If the file already exists, opening it in write mode clears out the old data and starts fresh, so be careful! If the file doesn’t exist, a new one is created.
+  </div>
+  <div>
+   <br>
+  </div>
+  <div>
+   The 
+   <span class="math-tex">\( write \)</span>&nbsp;method puts data into the file.
+  </div>
+  <div></div>
+  <pre><code class="language-python">&gt;&gt;&gt;&nbsp;line1&nbsp;=&nbsp;"This here's the wattle, \n"
+&gt;&gt;&gt; fout.write(line1)</code></pre>
+  <div></div>
+  <div></div>
+  <div>
+   Again, the file object keeps track of where it is, so if you call 
+   <span class="math-tex">\( write \)</span>&nbsp;again, it adds the new data to the end.&nbsp;
+  </div>
+  <div>
+   <pre><code class="language-python">&gt;&gt;&gt;&nbsp;line2&nbsp;=&nbsp;"the emblem of our land. \n"
+&gt;&gt;&gt; fout.write(line2)</code></pre>&nbsp;
+   <br>
+  </div>
+  <div>
+   When you are done writing, you have to close the file.&nbsp;
+   <br>
+  </div>
+  <div style="text-align: right;">
+   <pre><code class="language-python">&gt;&gt;&gt;&nbsp;fout.close()</code></pre>&nbsp;
+  </div>
+  <div style="text-align: right;">
+   [Think Python by Allen B. Downey] 
+   <br>
+  </div>
+  <div>
+   <br>
+  </div>
+  <div>
+   See&nbsp;more&nbsp;here:
+   <br>
+  </div>
+  <a href="https://docs.python.org/3.3/tutorial/inputoutput.html#reading-and-writing-files" rel="nofollow noopener noreferrer">https://docs.python.org/3.3/tutorial/inputoutput.html#reading-and-writing-files</a>
+ </body>
+</html>

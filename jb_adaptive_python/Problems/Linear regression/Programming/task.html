@@ -1,0 +1,18 @@
+<html>
+ <head></head>
+ <body>
+  <p>Find the optimal coefficients to construct a linear regression.</p> 
+  <p>On input your program will get the name of the csv-file, from which you need to read data. You can view an example <a href="/media/attachments/lesson/16462/boston_houses.csv" rel="nofollow noopener noreferrer">here</a>. They can be downloaded as follows:</p>
+  <pre><code class="language-python">fname = input()  # read file name from stdin
+f = urllib.request.urlopen(fname)  # open file from URL
+data = np.loadtxt(f, delimiter=',', skiprows=1)  # load data to work with</code></pre>
+  <p>Your task is to calculate the vector of the coefficients of the linear regression for the prediction of the first variable (the first column of data) by all the rest. Please remember that linear regression model is <span class="math-tex">\( y = \beta_0 + \beta_1 x_1 + \cdots + \beta_n x_n \)</span>.</p> 
+  <p>Print the coefficients of the linear regression, starting with <span class="math-tex">\( \beta_0 \)</span>, space separated. We will verify the match with an accuracy of up to 4 digits after the decimal point.</p> 
+  <p>The methods and techniques that can help you in the process of solution (may be hints!):</p>
+  <pre><code class="language-python">np.hstack((array1, array2, ...))  # joins arrays together by rows, which are the components of the tuple argument; the arrays should have the same dimensions, besides the second one 
+np.ones_like(array)  # creates an array, consisting of ones, identical in its dimensions to the array
+"delim".join(array)    # returns a line, consisting of an array elements, separated by the "delim" symbols  
+map(str, array)  # applies the str function to each of the array elements</code></pre>
+  <br>
+ </body>
+</html><br><b>Sample Input:</b><br>https://stepic.org/media/attachments/lesson/16462/boston_houses.csv<br><b>Sample Output:</b><br>-3.65580428507 -0.216395502369 0.0737305981755 4.41245057691 -25.4684487841 7.14320155075 -1.30108767765<br><br><br><font color="gray">Memory limit: 256 Mb</font><br><font color="gray">Time limit: 5s</font><br><br>

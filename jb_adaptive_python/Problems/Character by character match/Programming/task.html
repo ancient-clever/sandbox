@@ -1,0 +1,22 @@
+<html>
+ <head></head>
+ <body>
+  <p><b>Character by character match</b></p> 
+  <p>The simplest example of a pattern is a string that contains the characters that we want to find. For example, the "<b>abc</b>" string is the pattern for the "<b>abc</b>" string, thus</p>
+  <pre><code>import re
+results = re.findall("abc", "abcAbcabc")
+print(results)</code></pre>
+  <div> 
+   <p><br>Outputs all the occurrences of the "<b>abc</b>" string in the "<b>abcAbcabc</b>" string.</p> 
+   <p>In this problem the input is text. Using regular expressions, find all occurrences of the "<b>you</b>" substring in it and display its number.</p> 
+   <p>NB. This problem is case-sensitive.</p> 
+   <p>NB. For the correct reading of the standard input in this problem you need to use the </p> 
+  </div>
+  <br>
+  <pre><code class="language-python">import sys
+data = sys.stdin.read()</code></pre>
+  <div> 
+   <p><br>Since the text can have multiple lines, and input() reads on a by-line basis.</p>
+  </div>
+ </body>
+</html><br><b>Sample Input:</b><br>What are you doing here?<br><b>Sample Output:</b><br>1<br><br><b>Sample Input:</b><br>You are not you when you are hungry<br><b>Sample Output:</b><br>2<br><br><b>Sample Input:</b><br>PART I<br>IT WAS A PLEASURE TO BURN<br>IT was a special pleasure to see things eaten, to see things blackened and changed. With the brass nozzle in his fists, with this great python spitting its venomous kerosene upon the world, the blood pounded in his head, and his hands were the hands of some amazing conductor playing all the symphonies of blazing and burning to bring down the tatters and charcoal ruins of history. With his symbolic helmet numbered 451 on his stolid head, and his eyes all orange fl<br><b>Sample Output:</b><br>0<br><br><br><font color="gray">Memory limit: 256 Mb</font><br><font color="gray">Time limit: 5s</font><br><br>

@@ -1,0 +1,18 @@
+<html>
+ <head></head>
+ <body>
+  <p>You are given a description of the class inheritance in the JSON format. <br> The description represents an array of JSON objects that match the classes. Each JSON-object has the <b>name</b> field, which contains the name of the class, and the <b>parents</b> field, which contains the list of names of the direct ancestors.</p> 
+  <p><b>Example:</b><br> [{"name": "A", "parents": []}, {"name": "B", "parents": ["A", "C"]}, {"name": "C", "parents": ["A"]}]</p> 
+  <p><b>Python equivalent:</b></p>
+  <pre><code class="language-python">class A:
+    pass
+class B(A, C):
+    pass
+class C(A):
+    pass</code></pre>
+  <p><span>It is guaranteed that no class is inherited from itself explicitly or implicitly, and that no class is inherited explicitly from one class more than once.</span><br></p> 
+  <p>For each class find for how many classes it is an ancestor, and output this information in the following format:</p> 
+  <p><b>&lt;class name&gt; : &lt;number of ancesotrs&gt;</b></p> 
+  <p>Please output the classes in the lexicographic order.</p>
+ </body>
+</html><br><b>Sample Input:</b><br>[{"name": "A", "parents": []}, {"name": "B", "parents": ["A", "C"]}, {"name": "C", "parents": ["A"]}]<br><b>Sample Output:</b><br>A : 3<br>B : 1<br>C : 2<br><br><br><br><font color="gray">Memory limit: 256 Mb</font><br><font color="gray">Time limit: 2s</font><br><br>

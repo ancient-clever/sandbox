@@ -1,0 +1,15 @@
+<html>
+ <head></head>
+ <body>
+  <p>Tower of Hanoi is one of the well-known puzzles with the following rules.</p> 
+  <p>Given three rods (let's number them as 1, 2 and 3). The first rod has <span class="math-tex">\( n \)</span> rings on it with radius from 1 to <span class="math-tex">\( n \)</span>. Rings are ordered by radius, and the largest of the rings lies below all others.</p> 
+  <p>You should write an algorithm to move all <span class="math-tex">\( n \)</span> rings from the first rod to the third rod, sticking to the following rules: <br></p>
+  <ol>
+   <li>Only one disk can be moved at a time.<br></li>
+   <li>No disk may be placed on top of a smaller disk.<br></li>
+  </ol> 
+  <p>The program should output the shortest sequence of actions required to move all the rings from the first rod to the third one.</p> 
+  <p><b>Input format:</b><br> A positive integer <span class="math-tex">\( n \)</span>.</p> 
+  <p><b>Output format:</b><br> The list of moves to solve the puzzle. Each move should be written in a separate line in the format &nbsp;"<i>number of the rod from which we remove the ring</i>" - "<i>number of the rod, on which we put the ring</i>"<br>(see example)</p>
+ </body>
+</html><br><b>Sample Input:</b><br>2<br><b>Sample Output:</b><br>1 - 2<br>1 - 3<br>2 - 3<br><br><b>Sample Input:</b><br>1<br><b>Sample Output:</b><br>1 - 3<br><br><br><font color="gray">Memory limit: 256 Mb</font><br><font color="gray">Time limit: 5s</font><br><br>

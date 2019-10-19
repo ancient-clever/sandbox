@@ -1,0 +1,12 @@
+<html>
+ <head></head>
+ <body>
+  <p><b>Multiplication table</b></p> 
+  <p>When Paul studied at school, he memorized the multiplication table by rectangular blocks. For his practice it would be very nice to have a program, which outputs a block of the multiplication table.</p> 
+  <p>Write a program, which gets four numbers <span class="math-tex">\( a \)</span>, <span class="math-tex">\( b \)</span>, <span class="math-tex">\( c \)</span> and <span class="math-tex">\( d \)</span> as input, each on its own line. The program should output a fragment of multiplication table for all numbers of the interval <span class="math-tex">\( [a; b] \)</span> by all numbers of the interval <span class="math-tex">\( [c;d] \)</span>.</p> 
+  <p>Numbers <span class="math-tex">\( a \)</span>, <span class="math-tex">\( b \)</span>, <span class="math-tex">\( c \)</span> and <span class="math-tex">\( d \)</span> are natural ones and do not exceed 10, <span class="math-tex">\( a \le b \)</span>, <span class="math-tex">\( c \le d \)</span>.</p> 
+  <p>Follow the output format from the example, use '\t' (tab character) to separate elements inside the line. Adding a space instead of line break is performed by the "end" parameter of the print function: </p> 
+  <pre><code class="language-python">print(x, end=" ")</code></pre> 
+  <p>Please output <b>the numbers from the specified intervals themselves</b> in the left column and the top row (as headers).</p>
+ </body>
+</html><br><b>Sample Input:</b><br>7<br>10<br>5<br>6<br><b>Sample Output:</b><br>	5	6<br>7	35	42<br>8	40	48<br>9	45	54<br>10	50	60<br><br><b>Sample Input:</b><br>5<br>5<br>6<br>6<br><b>Sample Output:</b><br>	6<br>5	30<br><br><b>Sample Input:</b><br>1<br>3<br>2<br>4<br><b>Sample Output:</b><br>	2	3	4<br>1	2	3	4<br>2	4	6	8<br>3	6	9	12<br><br><br><font color="gray">Memory limit: 256 Mb</font><br><font color="gray">Time limit: 5s</font><br><br>
