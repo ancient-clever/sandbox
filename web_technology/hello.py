@@ -1,7 +1,9 @@
-def application(env, start_response):
+def app(environ, start_response):
+
     status = '200 OK'
-    headers = [('Content-type', 'text/plain')]
+    headers = [('Content-Type', 'text/plain')]
+
+    body = '\n'.join(environ['QUERY_STRING'].split('&'))
+
     start_response(status, headers)
-    qs = env['QUERY_STRING']
-    data = '\n'.join(qs.split('&'))
-    return [data]
+    return [body]
