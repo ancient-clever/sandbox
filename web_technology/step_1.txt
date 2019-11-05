@@ -1,9 +1,0 @@
-```
-git clone https://github.com/ancient-clever/web_technology.git ~/web
-bash web/init.sh
-```
-
-cd /home/box/web
-django-admin startproject ask
-cd ask
-python manage.py startapp qa
