@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-# https://github.com/pilosus/stepic_web_project
 import os
 import sys
 
