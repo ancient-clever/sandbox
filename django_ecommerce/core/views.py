@@ -19,6 +19,7 @@ def checkout(request):
 
 class HomeView(ListView):
     model = Item
+    paginate_by = 10
     template_name = "home.html"
 
 
@@ -46,8 +47,8 @@ def add_to_cart(request, slug):
             messages.info(request, "This item quantity was updated.")
             return redirect("core:product", slug=slug)
         else:
-            messages.info(request, "This item was added to your cart.")
             order.items.add(order_item)
+            messages.info(request, "This item was added to your cart.")
             return redirect("core:product", slug=slug)
     else:
         ordered_date = timezone.now()
