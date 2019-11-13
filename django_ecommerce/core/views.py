@@ -49,8 +49,14 @@ class CheckoutView(View):
                 billing_address.save()
                 order.billing_address = billing_address
                 order.save()
-                return redirect('core:checkout')
-            messages.warning(self.request, 'Failed checkout')
+                if payment_option == 'S':
+                    return redirect('core:payment', payment_option='stripe')
+                elif payment_option == 'P':
+                    return redirect('core:payment', payment_option='paypal')
+                else:
+                    messages.warning(
+                        self.request, "Invalid payment option selected")
+                    return redirect('core:checkout')
             return redirect('core:checkout')
         except ObjectDoesNotExist:
             messages.error(self.request, "You do not have an active order.")
@@ -64,22 +70,54 @@ class PaymentView(View):
     def post(self, *args, **kwargs):
         order = Order.objects.get(user=self.request.user, ordered=False)
         token = self.request.POST.get('stripeToken')
-        amount = order.get_total() * 100
-        charge = stripe.Charge.create(
-            amount=amount,
-            currency="usd",
-            source=token,
-        )
+        amount = int(order.get_total()) * 100
 
-        payment = Payment()
-        payment.stripe_charge_id = charge['id']
-        payment.user = self.request.user
-        payment.amount = amount
-        payment.save()
+        try:
+            charge = stripe.Charge.create(
+                amount=amount,
+                currency="usd",
+                source=token,
+            )
+            payment = Payment()
+            payment.stripe_charge_id = charge['id']
+            payment.user = self.request.user
+            payment.amount = order.get_total()
+            payment.save()
 
-        order.ordered = True
-        order.payment = payment
-        order.save()
+            order.ordered = True
+            order.payment = payment
+            order.save()
+
+            messages.success(self.request, "Your order was successful!")
+            return redirect("/")
+
+        except stripe.error.CardError as e:
+            messages.error(self.request, f"{e.error.message}")
+            return redirect("/")
+
+        except stripe.error.RateLimitError as e:
+            messages.error(self.request, f"{e.error.message}")
+            return redirect("/")
+
+        except stripe.error.InvalidRequestError as e:
+            messages.error(self.request, f"{e.error.message}")
+            return redirect("/")
+
+        except stripe.error.AuthenticationError as e:
+            messages.error(self.request, f"{e.error.message}")
+            return redirect("/")
+
+        except stripe.error.APIConnectionError as e:
+            messages.error(self.request, f"{e.error.message}")
+            return redirect("/")
+
+        except stripe.error.StripeError as e:
+            messages.error(self.request, f"{e.error.message}")
+            return redirect("/")
+
+        except Exception as e:
+            messages.error(self.request, f"{e}")
+            return redirect("/")
 
 
 class HomeView(ListView):
