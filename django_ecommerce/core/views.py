@@ -78,19 +78,16 @@ class PaymentView(View):
 
         try:
             charge = stripe.Charge.create(
-                amount=amount,  # cents
+                amount=amount,
                 currency="usd",
                 source=token
             )
 
-            # create the payment
             payment = Payment()
             payment.stripe_charge_id = charge['id']
             payment.user = self.request.user
             payment.amount = order.get_total()
             payment.save()
-
-            # assign the payment to the order
 
             order.ordered = True
             order.payment = payment
